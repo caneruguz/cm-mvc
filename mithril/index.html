@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Commenting App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body data-bind="event: { mouseup: tabDragUp, mousemove: bandDrag}"> 
+	  <div class="container">
+
+      <div id="td-header" class="jumbotron">
+        <div id="td-title"></div>
+        <p id="td-desc" class="lead" >Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      </div> <!-- Close jumbotron --> 
+
+      <div class="col-xs-12" id="cm-wrapper">
+<!--           <h3> Comments </h3> 
+
+          <div class="col-xs-8" >
+             
+             <div class='cm-commentBox'> 
+                <div class='cm-commentText' data-postid="" data-source="">
+                  <b>Username</b>
+                  <span class='cm-boxMenu cm-reply'> 
+                    Reply
+                  </span><br /><span > Content of the discussion</span>
+                </div>
+              </div>
+          </div>
+          <div class="col-xs-4"> 
+            <input type="text" class="form-control" placeholder="Filter">
+            <hr class="soften" /> 
+           <textarea type="text" class="cm-box" placeholder="Add comment" > </textarea> 
+            <button class="btn btn-success btn-sm cm-boxSubmit btn-lg"> Add Comment</button> 
+
+          </div> -->
+
+              
+ 
+      </div>
+
+
+     
+    <div class="col-xs-12 footer">
+       <hr class="soften" />
+        <div class="text-center"> Built with Mithril. </div>
+    </div>
+
+    </div> <!-- Close Container  -->
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/mithril.min.js"></script>
+    <script type="text/javascript">
+	 
+      // Define the module
+      var todo = {};  
+
+      // Info Model that contains general information about the module  
+      todo.Info = function(data){
+        this.title = m.prop(data.title);
+        this.description = m.prop(data.description);  
+        this.script = m.prop("mithril"); 
+        this.loggedUser = m.prop(data.user) 
+      }
+
+      // Main Controller that adds a comment
+      comment.controller = function() {
+        this.list = new comment.List(); 
+        this.content = m.prop(""); 
+
+        // this.add = function(content){
+        //   if(content()){
+        //     this.list.push(new comment.Comment({content : content()})); 
+        //     //this.content("asdasd"); 
+        //   }
+        // }
+        
+        this.add = function() {
+            if (this.content()) {
+                this.list.push(new comment.Comment({content: this.content()}));
+                this.content("");
+                console.log(this.list);
+            }
+        }.bind(this);
+
+
+      }
+
+
+
+      // Add view
+      comment.view = function(makeComment) {
+        return m("div#cm-container", [
+            m("div#cm-addComment", [
+                m("textarea.cm-box", {onchange: m.withAttr("value", makeComment.content), value: makeComment.content()}), 
+                m("button.btn.btn-info.cm-boxSubmit", {onclick: makeComment.add}, "Add"), 
+                 
+              ]),
+            m("div#cm-showComments", [
+                makeComment.list.map(function(comment, index){
+                    return   m("ul", [
+                        m("li", {value : comment.content()} )
+                      ])
+                })                
+   
+              ])
+          ])
+      }; 
+
+      comment.infoView = function(info){
+        return m('h2', info.title()); 
+      }
+
+      var makeComment = new comment.controller();
+      // makeComment.content("This is my new comment"); 
+      // makeComment.add(makeComment.content); 
+
+      // Render View
+      m.render(document.getElementById("cm-wrapper"), comment.view(makeComment));
+
+
+      // Add some info to the module
+      var MyComment = new comment.Info({title:"Commenting module", user : "Caner" }); 
+      m.render(document.getElementById("td-title"), comment.infoView(MyComment)); 
+
+
+	    
+    </script>
+  </body>
+</html>

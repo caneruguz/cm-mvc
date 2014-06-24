@@ -1,0 +1,25 @@
+.cm-box {
+	width: 100%; 
+	display: block;
+	resize: none;
+	border: 1px solid #ccc;
+	height: 100px;
+}
+
+.cm-boxSubmit {
+	margin-top: 20px; 
+}
+
+.cm-commentBox {
+	padding:10px;
+	border-left:3px solid #efefef;
+	margin:5px;
+	background:#fff;
+	margin-right:-5px;
+}
+
+.cm-boxMenu {
+	font-size:12px;
+	color:#999;
+	margin:0 10px;
+}
