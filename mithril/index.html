@@ -4,8 +4,8 @@
     <title>Commenting App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,9 +17,8 @@
   <body data-bind="event: { mouseup: tabDragUp, mousemove: bandDrag}"> 
 	  <div class="container">
 
-      <div id="td-header" class="jumbotron">
-        <div id="td-title"></div>
-        <p id="td-desc" class="lead" >Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+      <div id="cm-header" class="jumbotron">
+   
       </div> <!-- Close jumbotron --> 
 
       <div class="col-xs-12" id="cm-wrapper">
@@ -63,80 +62,84 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/mithril.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="mithril.min.js"></script>
     <script type="text/javascript">
 	 
       // Define the module
-      var todo = {};  
+      var comment = {};  
 
       // Info Model that contains general information about the module  
-      todo.Info = function(data){
+      comment.Info = function(data){
         this.title = m.prop(data.title);
         this.description = m.prop(data.description);  
         this.script = m.prop("mithril"); 
         this.loggedUser = m.prop(data.user) 
-      }
+      }; 
+
+      comment.List = m.prop([]);
+      m.request({method: "GET", url: "../data.json"}).then(comment.List).then(comment.loadComments);
+
+
+      comment.Comment = function(data){
+        this.id = m.prop(data.id); 
+        this.content = m.prop(data.content); 
+        this.user = m.prop(data.user); 
+      }; 
+
+
+
 
       // Main Controller that adds a comment
       comment.controller = function() {
-        this.list = new comment.List(); 
         this.content = m.prop(""); 
-
-        // this.add = function(content){
-        //   if(content()){
-        //     this.list.push(new comment.Comment({content : content()})); 
-        //     //this.content("asdasd"); 
-        //   }
-        // }
-        
         this.add = function() {
             if (this.content()) {
-                this.list.push(new comment.Comment({content: this.content()}));
+                comments.List.push(new comment.Comment({content: this.content()}));
                 this.content("");
                 console.log(this.list);
             }
         }.bind(this);
 
-
       }
 
 
 
-      // Add view
-      comment.view = function(makeComment) {
-        return m("div#cm-container", [
-            m("div#cm-addComment", [
-                m("textarea.cm-box", {onchange: m.withAttr("value", makeComment.content), value: makeComment.content()}), 
-                m("button.btn.btn-info.cm-boxSubmit", {onclick: makeComment.add}, "Add"), 
-                 
-              ]),
-            m("div#cm-showComments", [
-                makeComment.list.map(function(comment, index){
+      // VIEWS
+      comment.ShowCommentsView = function(comments) {
+        return m("div#cm-showComments", [
+                comments.list.map(function(comment, index){
                     return   m("ul", [
                         m("li", {value : comment.content()} )
                       ])
                 })                
    
-              ])
-          ])
+              ])    
       }; 
 
-      comment.infoView = function(info){
-        return m('h2', info.title()); 
+      comment.ShowFormView = function(){
+        return  m("div#cm-addComment", [
+                  m("textarea.cm-box", {onchange: m.withAttr("value", makeComment.content), value: makeComment.content()}), 
+                m("button.btn.btn-info.cm-boxSubmit", {onclick: makeComment.add}, "Add"),            
+              ]) 
       }
 
+      comment.headerView = function(info){
+        return  m("div", [
+                m('h2#cm-title.', info.title()),
+                m("p#cm-desc.lead", info.description()) 
+          ])
+                }
+
       var makeComment = new comment.controller();
-      // makeComment.content("This is my new comment"); 
-      // makeComment.add(makeComment.content); 
+ 
 
-      // Render View
-      m.render(document.getElementById("cm-wrapper"), comment.view(makeComment));
-
-
+      // Render Headers
       // Add some info to the module
-      var MyComment = new comment.Info({title:"Commenting module", user : "Caner" }); 
-      m.render(document.getElementById("td-title"), comment.infoView(MyComment)); 
+      var MyComment = new comment.Info({title:"Commenting module", description: "Using Mithril framework",  user : "Caner" }); 
+      m.render(document.getElementById("cm-header"), comment.headerView(MyComment)); 
+      m.render(document.getElementById("cm-wrapper"), comment.ShowFormView()); 
+      m.render(document.getElementById("cm-wrapper"), comment.ShowCommentsView(comments.List)); 
 
 
 	    
