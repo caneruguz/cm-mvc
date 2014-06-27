@@ -5,6 +5,16 @@
 .navbar {
     background-color: lightslategray;
     margin-bottom: 0px !important;
+
+}
+.navbar a {
+    color: white !important;
+}
+.navbar a:hover {
+    color: #666 !important;
+}
+.navbar li.active a {
+    color: black !important;
 }
 
 .cm-login {

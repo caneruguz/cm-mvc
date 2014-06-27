@@ -1,0 +1,14 @@
+[
+    {
+        "logUser" : "Mark Brown",
+        "logUserID" : 2,
+        "logText" : "made changes to the application.",
+        "logDate" : "2014-06-27 10:01:00"
+    },
+    {
+        "logUser" : "Loretta James",
+        "logUserID" : 3,
+        "logText" : "changed wiki content.",
+        "logDate" : "2014-06-27 10:01:00"
+    }
+]

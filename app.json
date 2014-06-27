@@ -1,8 +1,8 @@
-
 {
         "appTitle": "Framework Testing",
         "appDesc" : "Some description about the app. This data is being loaded from the server.",
-        "appUser" : "Caner Uguz"
+        "appUser" : "Caner Uguz",
+        "appUserID" : 1
     }
 
 

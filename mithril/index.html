@@ -15,74 +15,7 @@
     <![endif]-->
 </head>
 <body>
-<div class="container">
 
-    <div class="row">
-        <div class="col-sm-8 col-xs-12">
-            <div id="cm-wiki" class="col-xs-12">
-
-            </div>
-            <div id="cm-comment" class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-8">
-                        <h4>Comments</h4>
-                    </div>
-                    <div class="col-xs-4">
-                        <input type="text" class="form-control input-sm" placeholder="filter">
-                    </div>
-
-                </div>
-                   <hr/>
-                <div id="cm-boxWrapper">
-                     <div class="row">
-                         <div class="col-xs-9">
-                             <textarea class="cm-box"></textarea>
-                         </div>
-                         <div class="col-xs-3">
-                            <button class="btn btn-default btn-block btn-lg"> Add </button>
-                         </div>
-                     </div>
-                    <div class="row">
-                        <div id="cm-commentList" class="col-xs-12">
-                                <table class="table table-condensed">
-                                    <tr>
-                                        <td>
-                                            <b>Caner </b>
-                                        </td>
-                                        <td>
-                                            Quisque faucibus convallis eros id viverra. Vestibulum non mauris eu metus viverra bibendum. Suspendisse velit neque, rutrum vitae.
-                                        </td>
-                                        <td>
-                                            <span class="text-muted"> 2 minutes ago </span>
-                                        </td>
-                                    </tr>
-                                </table>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4 col-xs-12">
-            <div id="cm-log">
-                <h4>Activity Log </h4>
-                <table class="table table-condensed">
-                    <tr>
-                        <td>
-                            <span class="text-muted"> 20 minutes ago </span>
-                        </td>
-                        <td>
-                            Caner Uguz added x to the y.
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-
-    </div>
-
-    <hr/>
-</div> <!-- Close Container  -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
@@ -91,55 +24,94 @@
 <script src="mithril.js"></script>
 <script type="text/javascript">
 (function(){
+"use strict";
 
-
-/* General App Module  */
-
-    // Module name
+    /***************   APP   **************************/
+    // App module  -- Sets global app variables and settings, does not generate views
+    // Define module :
     var App = {};
-
-    // Model, which only has our list of general data
-    App.appData = function(){
-        this.script = m.prop("Mithril");
-        this.scriptURL = m.prop("http://lhorie.github.io/mithril/");
-        this.data = m.request({method: "GET", url: "../app.json"});
+    // Load information from server that will be the same for all apps
+    App.info = m.request({method: "GET", url: "../app.json"});
+    // Define information for this app only
+    App.script = m.prop({
+        title : "Mithril",
+        url : "http://lhorie.github.io/mithril/"
+    });
+    App.pageInfo = function(data){
+        this.title = m.prop(data.title);
+        this.active = m.prop(data.active);
+        this.desc = m.prop(data.desc);
+        this.html = m.prop(data.html);
     }
+    // App doesn't have controllers or views.
 
-    // Controller
-    App.controller = function(){
-        this.info = new App.appData();
-
-        // Tie to wiki view for home page
-        m.module(document.getElementById("cm-wiki"), wiki);
-    }
-
-    // View
-    App.view = function (controller){
-        console.log(controller.info.data().appUser);
-        return [m("nav.navbar.navbar-default.navbar-static-top[role='navigation']", [
-            m(".container", [
-                m(".collapse.navbar-collapse[id='bs-example-navbar-collapse-1']", [
-                    m("ul.nav.navbar-nav", [
-                        m("li.active", [m("a[href='#']", "Home")]),
-                        m("li", [m("a[href='#']", "About")])
-                    ]),
-                    m("ul.nav.navbar-nav.navbar-right", [
-                        m("li", "You are logged in as " + controller.info.data().appUser)
-                    ])
-                ])
-            ]),
-            "\n"
-        ]),
-            m(".jumbotron", [
+    /***************   TEMPLATE MODULES   **************************/
+    // Quick modules for mainly view purposes
+    var navbar = {
+        controller : function(activePage){
+            this.active = activePage;
+        },
+        view : function(ctrl){
+            var homeClass = "";
+            var aboutClass ="";
+            switch (ctrl.active) {
+                case "home":
+                    homeClass = ".active";
+                    break;
+                case "about" :
+                    aboutClass = ".active";
+                    break;
+            }
+            console.log(App.info());
+            return [m("nav.navbar.navbar-default.navbar-static-top[role='navigation']", [
                 m(".container", [
-                    m("h2", controller.info.data().appTitle+" Application using " + controller.info.script()),
-                    m("p", controller.info.data().appDesc),
-                    m("p", [m("a.btn.btn-primary.btn-lg[role='button'][href='"+controller.info.scriptURL()+"']", "Learn more about "+ controller.info.script())])
+                    m(".collapse.navbar-collapse[id='bs-example-navbar-collapse-1']", [
+                        m("ul.nav.navbar-nav", [
+                            m("li"+homeClass, [m("a[href='?/home']", "Home")]),
+                            m("li"+aboutClass, [m("a[href='?/about']", "About")])
+                        ]),
+                        m("ul.nav.navbar-nav.navbar-right", [
+                            m("li", [m("a", "You are logged in as " + App.info().appUser)])
+                        ])
+                    ])
                 ]),
                 "\n"
             ])
-        ]
-    };
+            ]
+        }
+    }
+
+    var header = {
+        controller : function (pageInfo){
+            this.page = pageInfo;
+        },
+        view : function (ctrl){
+           return  m(".jumbotron", [
+                m(".container", [
+                    m("h2", ctrl.page.title()),
+                    m("p", ctrl.page.desc()),
+                    m("p", ctrl.page.html()())
+                ]),
+                "\n"
+            ]);
+        }
+    }
+
+
+    var footer = {
+        controller : function () {
+
+        },
+        view : function (ctrl){
+            return [
+                    m("hr"),
+                    m("div.text-muted", "Built by COS")
+                    ]
+        }
+    }
+
+    /***************   HOME PAGE MODULES   **************************/
+    // Quick modules for mainly view purposes
 
 
 /* Wiki Module  */
@@ -147,7 +119,6 @@
     var wiki = {};
 
     wiki.Data = function () {
-        this.info = new App.appData();
         this.wikis = m.request({method: "GET", url: "../wiki.json"});
     };
 
@@ -156,7 +127,6 @@
     }
 
     wiki.view = function (controller) {
-        console.log(controller.wikiInfo.wikis().content);
         return m(".panel.panel-default", [
             m(".panel-heading", [
                 m(".row", [
@@ -178,10 +148,189 @@
     };
 
 
+/* Logs Module  */
+
+    var logs = {};
+
+    logs.List =  m.request({method: "GET", url: "../logs.json"});
+
+    logs.singleLog = function(logText){
+        this.logUser = App.info().appUser;
+        this.logUserID = App.info().appUserID;
+        this.logText = m.prop(logText);
+        this.logDate = new Date();
+    }
+
+    logs.controller = function(){
+        this.logText = m.prop("");
+
+        this.add = function() {
+            if (this.logText()) {
+                logs.List.push(new logs.singleLog(this.logText));
+                this.logText("");
+            }
+        }.bind(this);
+
+    }
+
+    logs.view = function(controller){
+        console.log(logs.List());
+        return [
+            m("h4", "Activity Log "),
+            m("table.table.table-condensed", [
+                m("tbody", [
+                        logs.List().map(function(log, index){
+                            return m("tr", [
+                                m("td", [
+                                    m("span.text-muted", log.logDate)
+                                ]),
+                                m("td", [
+                                    m("a[href='user/1']", log.logUser),
+                                    " ",
+                                    m("span.logText", log.logText),
+                                    ".\n                        "
+                                ])
+                            ])
+                        })
+
+                ])
+            ])
+        ]
+    }
+
+    /* Comment Module */
+
+    var comments = {};
+
+    comments.List = m.request({method: "GET", url: "../comments.json"});
+
+    comments.comment = function(content){
+           this.userid = App.info().appUserID;
+           this.username = App.info().appUser;
+           this.content = m.prop(content);
+           this.date = new Date();
+
+    }
+
+    comments.controller = function (){
+
+        this.filterText = m.prop("");
+        console.log(this.filterText());
+        // add comment
+
+        this.filteredList = new comments.List();
+        this.filter = function(filteredList){
+            if(this.filterText()){
+
+            }
+
+        }
+
+    }
+
+    comments.view = function(ctrl){
+        return [" ",m(".row", [
+            m(".col-sm-8.col-xs-12", [
+                m(".col-xs-12[id='cm-comment']", [
+                    m(".row", [
+                        m(".col-xs-8", [
+                            m("h4", "Comments")
+                        ]),
+                        m(".col-xs-4", [
+                            m("input.form-control.input-sm[placeholder='filter'][type='text']", { onchange: m.withAttr("value", ctrl.filterText) , value : ctrl.filterText()} )
+                        ])
+                    ]),
+                    m("hr"),
+                    m("[id='cm-boxWrapper']", [
+                        m(".row", [
+                            m(".col-xs-9", [
+                                m("textarea.cm-box")
+                            ]),
+                            m(".col-xs-3", [
+                                m("button.btn.btn-default.btn-block.btn-lg", " Add ")
+                            ])
+                        ]),
+                        m(".row", [
+                            m(".col-xs-12[id='cm-commentList']", [
+                                m("table.table.table-condensed", [
+                                    m("tbody", [
+                                        comments.List().map(function(comment, index){
+                                            return m("tr", [
+                                                m("td", [
+                                                    m("b", comment.username)
+                                                ]),
+                                                m("td", comment.content),
+                                                m("td", [
+                                                    m("span.text-muted", comment.date)
+                                                ])
+                                            ])
+
+                                        })
+
+                                    ])
+                                ])
+                            ])
+                        ])
+                    ])
+                ])
+            ]),
+            m(".col-sm-4.col-xs-12", [
+                m("[id='cm-logs']", [
+
+                ])
+            ])
+        ])]
+    }
+
+
+
+    /***************   ROUTING AND PAGES **************************/
+
+    /* Basic About page */
+    var about = {};
+    about.controller = function(){
+        this.pageInfo = new App.pageInfo({title : "About Us", active : "about", desc : "Learn more about us.", html : function(){return ""; }});
+        this.navControl = new navbar.controller(this.pageInfo.active());
+        this.headerControl = new header.controller(this.pageInfo);
+    }
+    about.view = function(controller){
+            return [
+                navbar.view(controller.navControl),
+                header.view(controller.headerControl),
+                m("div.container", [
+                    m("div", "More about the about page."),
+                    footer.view()
+                ])
+            ];
+    }
+    var home = {};
+    home.controller = function(){
+        this.pageInfo = new App.pageInfo({title : "Framework Application", active : "home", desc : "This page is built with Mithril.js. ", html : function(){ return m("a.btn.btn-info[href='http://lhorie.github.io/mithril/']", "Learn More"); }});
+        this.navControl = new navbar.controller(this.pageInfo.active());
+        this.headerControl = new header.controller(this.pageInfo);
+        this.wikiControl = new wiki.controller();
+        this.logsControl = new logs.controller();
+        this.commentsControl = new comments.controller();
+    }
+    home.view = function (ctrl){
+        return [
+            navbar.view(ctrl.navControl),
+            header.view(ctrl.headerControl),
+            m("div.container", [
+                m("div.row", [
+                    m("div.col-md-8#cm-wiki", wiki.view(ctrl.wikiControl)),
+                    m("div.col-md-4#cm-logs", logs.view(ctrl.logsControl))
+                ]),
+                comments.view(ctrl.commentsControl),
+                footer.view()
+            ])
+        ];
+    }
+
 /* Route - Initializes the app */
     m.route(document.body, "/", {
-        "/": App,
-        "/app" : App
+        "/": home,
+        "/about" : about
     });
 
 
