@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>Commenting App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
@@ -10,111 +10,182 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
-	<div id="app" class="container">
+</head>
+<body>
+<div class="container">
 
-        <div id="cm-header" ></div>
-        <div id="cm-wrapper"></div>
+    <div class="row">
+        <div class="col-sm-8 col-xs-12">
+            <div id="cm-wiki" class="col-xs-12">
 
-    </div> <!-- Close Container  -->
+            </div>
+            <div id="cm-comment" class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h4>Comments</h4>
+                    </div>
+                    <div class="col-xs-4">
+                        <input type="text" class="form-control input-sm" placeholder="filter">
+                    </div>
 
-    <div id="todo" class="container">
+                </div>
+                   <hr/>
+                <div id="cm-boxWrapper">
+                     <div class="row">
+                         <div class="col-xs-9">
+                             <textarea class="cm-box"></textarea>
+                         </div>
+                         <div class="col-xs-3">
+                            <button class="btn btn-default btn-block btn-lg"> Add </button>
+                         </div>
+                     </div>
+                    <div class="row">
+                        <div id="cm-commentList" class="col-xs-12">
+                                <table class="table table-condensed">
+                                    <tr>
+                                        <td>
+                                            <b>Caner </b>
+                                        </td>
+                                        <td>
+                                            Quisque faucibus convallis eros id viverra. Vestibulum non mauris eu metus viverra bibendum. Suspendisse velit neque, rutrum vitae.
+                                        </td>
+                                        <td>
+                                            <span class="text-muted"> 2 minutes ago </span>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4 col-xs-12">
+            <div id="cm-log">
+                <h4>Activity Log </h4>
+                <table class="table table-condensed">
+                    <tr>
+                        <td>
+                            <span class="text-muted"> 20 minutes ago </span>
+                        </td>
+                        <td>
+                            Caner Uguz added x to the y.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
     </div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="mithril.js"></script>
-    <!--<script src="app.js"></script>-->
-    <!--<script src="controller.js"></script>-->
-    <!--<script src="model.js"></script>-->
-    <!--<script src="view.js"></script>-->
-    <!--<script src="home.js"></script>-->
-    <script type="text/javascript">
+    <hr/>
+</div> <!-- Close Container  -->
 
-        // Define Module
-        var app = {};
-
-        //the Todo class has two properties
-        app.Comment = function(data) {
-            this.content = m.prop(data.content);
-            this.user = m.prop(data.user);
-        };
-
-        app.Settings = function(settings){
-            this.user = m.prop("Caner");
-            this.script = m.prop("Mithril");
-            this.description = m.prop("Commenting application. ")
-        }
-
-        //the TodoList class is a list of Todo's
-        app.CommentList = Array
-
-        app.controller = function() {
-            this.list = new app.CommentList();
-            this.settings = new app.Settings();
-            this.content = m.prop("");
-            this.user = m.prop("");
-
-            this.add = function() {
-                if (this.content()) {
-                    this.list.push(new app.Comment({content: this.content(), user: this.user()}));
-                    this.content("");
-                    this.user("");
-                }
-            }.bind(this);
-        }
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="mithril.js"></script>
+<script type="text/javascript">
+(function(){
 
 
-        app.view = function(ctrl) {
-            return m("div", [
-                m("div", [
-                    m('h2#cm-title.', ctrl.settings.script()),
-                    m("p#cm-desc.lead", ctrl.settings.description())
-                ]),
-                m("div", [
+/* General App Module  */
 
-                    m("textarea[placeholder=Comment]", {onchange: m.withAttr("value", ctrl.content), value: ctrl.content()}),
-                    m("input[placeholder=User]", {onchange: m.withAttr("value", ctrl.user), value: ctrl.user()}),
-                    m("button", {onclick: ctrl.add}, "Add"),
-                    m("table", [
-                        ctrl.list.map(function(item, index) {
-                            return m("tr", [
-                                m("td", [
-                                    m("")
-                                ]),
-                                m("td",  [ m("b", [ m("a[href='/home/"+item.user()+"']", {config: m.route}, item.user())]), m("span", item.content())]),
-                            ])
-                        })
+    // Module name
+    var App = {};
+
+    // Model, which only has our list of general data
+    App.appData = function(){
+        this.script = m.prop("Mithril");
+        this.scriptURL = m.prop("http://lhorie.github.io/mithril/");
+        this.data = m.request({method: "GET", url: "../app.json"});
+    }
+
+    // Controller
+    App.controller = function(){
+        this.info = new App.appData();
+
+        // Tie to wiki view for home page
+        m.module(document.getElementById("cm-wiki"), wiki);
+    }
+
+    // View
+    App.view = function (controller){
+        console.log(controller.info.data().appUser);
+        return [m("nav.navbar.navbar-default.navbar-static-top[role='navigation']", [
+            m(".container", [
+                m(".collapse.navbar-collapse[id='bs-example-navbar-collapse-1']", [
+                    m("ul.nav.navbar-nav", [
+                        m("li.active", [m("a[href='#']", "Home")]),
+                        m("li", [m("a[href='#']", "About")])
+                    ]),
+                    m("ul.nav.navbar-nav.navbar-right", [
+                        m("li", "You are logged in as " + controller.info.data().appUser)
                     ])
                 ])
-            ]);
-        };
+            ]),
+            "\n"
+        ]),
+            m(".jumbotron", [
+                m(".container", [
+                    m("h2", controller.info.data().appTitle+" Application using " + controller.info.script()),
+                    m("p", controller.info.data().appDesc),
+                    m("p", [m("a.btn.btn-primary.btn-lg[role='button'][href='"+controller.info.scriptURL()+"']", "Learn more about "+ controller.info.script())])
+                ]),
+                "\n"
+            ])
+        ]
+    };
 
 
-        var home = {
-            controller: function(){
-                this.user = m.route.param('user');
-            },
-            view : function(controller) {
-                return m("div",[ m('h2', controller.user), m("p", "Something else here"), m("div", [m("a[href='/']", {config: m.route}, "Back")])])
-            }
-        };
-        
-       // m.module(document.getElementById("cm-wrapper"), app);
+/* Wiki Module  */
 
-        m.route(document.getElementById("cm-wrapper"), "/", {
-            "/": app,
-            "/app" : app,
-            "/home/:user": home
-        });
+    var wiki = {};
 
-    </script>
-  </body>
+    wiki.Data = function () {
+        this.info = new App.appData();
+        this.wikis = m.request({method: "GET", url: "../wiki.json"});
+    };
+
+    wiki.controller = function(){
+        this.wikiInfo = new wiki.Data();
+    }
+
+    wiki.view = function (controller) {
+        console.log(controller.wikiInfo.wikis().content);
+        return m(".panel.panel-default", [
+            m(".panel-heading", [
+                m(".row", [
+                    m(".col-md-9", [
+                        m("h2.panel-title", controller.wikiInfo.wikis().title)
+                    ]),
+                    m(".col-md-3.cm-wikiBar", [
+                        m(".btn-group", [
+                            m("button.btn.btn-sm.btn-default[type='button']", "Edit"),
+                            m("button.btn.btn-sm.btn-default[type='button']", "Preview")
+                        ])
+                    ])
+                ])
+            ]),
+            m(".panel-body", [
+                m("p", controller.wikiInfo.wikis().content)
+            ])
+        ])
+    };
+
+
+/* Route - Initializes the app */
+    m.route(document.body, "/", {
+        "/": App,
+        "/app" : App
+    });
+
+
+    }());
+</script>
+</body>
 </html>

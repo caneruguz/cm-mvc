@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Commenting App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="app" class="container">
+    <div id="cm-header" ></div>
+    <div id="cm-wrapper"></div>
+
+</div> <!-- Close Container  -->
+
+<div id="todo" class="container">
+
+</div>
+
+<div id="content">
+</div>
+
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+
+
+<script src="//canjs.com/release/2.0.4/can.jquery.js"></script>
+
+<script type="text/mustache" id="app-template">
+{{#if data.visible}}
+  <h1>{{data.message}}</h1>
+{{/if}}
+
+<ul>
+{{#each list}}
+  <li>
+    <b>{{username}}</b> :  {{content}}
+  </li>
+{{/each}}
+</ul>
+
+<p>
+  <i>created {{prettyDate time.createdAt}}</i>
+</p>
+
+</script>
+
+
+<script type="text/javascript">
+$(function(){
+// Give message a value
+
+    var time = new can.Map({
+        createdAt : new Date()
+    });
+
+    var dateHelper = function ( date ) {
+        // compare the date passed in with 'now'
+        var timeElapsed = ( now() - date() ) / 1000;
+        if(timeElapsed < 1.2){
+            return "a second ago"
+        } else if (timeElapsed < 10 ) {
+            return "a couple seconds ago"
+        } else if (timeElapsed < 20 ) {
+            return "some seconds ago"
+        } else if (timeElapsed < 30 ){
+            return "a few seconds ago"
+        }  else if (timeElapsed < 40 ) {
+            return "a half min ago"
+        } else {
+            return Math.round(timeElapsed/60)+" min ago"
+        }
+    }
+
+    var now = can.compute( new Date() )
+
+
+
+    var data = new can.Map({message: "Hello World!", visible : true});
+
+    var list = new can.List([
+        {
+            username : "Caner", content : "My Message"
+        },
+        {
+            username: "Josh", content : "Another message"
+        },
+        {
+            username: "Caner", content : "something else"
+        }
+    ]);
+
+    var CommentList = can.Control.extend({
+        //behavior
+    });
+
+
+// Pass the id of the template and the data, containing our message to can.view
+    var frag = can.view("app-template", {list : list , data : data, time : time}, {prettyDate: dateHelper});
+//Load the DocumentFragment in the page
+    $("#my-app").html( frag);
+
+    setTimeout(function(){
+        list.push({username: "Steve", content: "Third message."});
+        data.attr("visible", false);
+    }, 2000);
+
+    setTimeout(function(){
+        now( new Date() );
+        setTimeout(arguments.callee, 1000);
+    }, 2000);
+
+});
+</script>
+<!-- CanJS needs a place to put your application -->
+<div id="my-app"></div>
+</body>
+</html>

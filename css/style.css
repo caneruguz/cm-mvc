@@ -1,9 +1,33 @@
+.cm-wikiBar {
+    text-align: right;
+}
+
+.navbar {
+    background-color: lightslategray;
+    margin-bottom: 0px !important;
+}
+
+.cm-login {
+    padding:14px 5px 5px 5px;
+    color: white;
+    float:right;
+}
+
+#cm-commentList{
+    margin: 20px 0;
+}
+
+#cm-wiki {
+    margin-bottom:50px;
+}
+
+
 .cm-box {
 	width: 100%; 
 	display: block;
 	resize: none;
 	border: 1px solid #ccc;
-	height: 100px;
+	height: 70px;
 }
 
 .cm-boxSubmit {

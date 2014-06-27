@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Commenting App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+	<div id="app" class="container">
+
+        <div id="cm-header" ></div>
+        <div id="cm-wrapper"></div>
+
+    </div> <!-- Close Container  -->
+
+    <div id="todo" class="container">
+
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="mithril.js"></script>
+    <!--<script src="app.js"></script>-->
+    <!--<script src="controller.js"></script>-->
+    <!--<script src="model.js"></script>-->
+    <!--<script src="view.js"></script>-->
+    <!--<script src="home.js"></script>-->
+    <script type="text/javascript">
+
+        // Define Module
+        var app = {};
+
+        //the Todo class has two properties
+        app.Comment = function(data) {
+            this.content = m.prop(data.content);
+            this.user = m.prop(data.user);
+        };
+
+        app.Settings = function(settings){
+            this.user = m.prop("Caner");
+            this.script = m.prop("Mithril");
+            this.description = m.prop("Commenting application. ")
+        }
+
+        //the TodoList class is a list of Todo's
+        app.CommentList = Array
+
+        app.controller = function() {
+            this.list = new app.CommentList();
+            this.settings = new app.Settings();
+            this.content = m.prop("");
+            this.user = m.prop("");
+
+            this.add = function() {
+                if (this.content()) {
+                    this.list.push(new app.Comment({content: this.content(), user: this.user()}));
+                    this.content("");
+                    this.user("");
+                }
+            }.bind(this);
+        }
+
+
+        app.view = function(ctrl) {
+            return m("div", [
+                m("div", [
+                    m('h2#cm-title.', ctrl.settings.script()),
+                    m("p#cm-desc.lead", ctrl.settings.description())
+                ]),
+                m("div", [
+
+                    m("textarea[placeholder=Comment]", {onchange: m.withAttr("value", ctrl.content), value: ctrl.content()}),
+                    m("input[placeholder=User]", {onchange: m.withAttr("value", ctrl.user), value: ctrl.user()}),
+                    m("button", {onclick: ctrl.add}, "Add"),
+                    m("table", [
+                        ctrl.list.map(function(item, index) {
+                            return m("tr", [
+                                m("td", [
+                                    m("")
+                                ]),
+                                m("td",  [ m("b", [ m("a[href='/home/"+item.user()+"']", {config: m.route}, item.user())]), m("span", item.content())]),
+                            ])
+                        })
+                    ])
+                ])
+            ]);
+        };
+
+
+        var home = {
+            controller: function(){
+                this.user = m.route.param('user');
+            },
+            view : function(controller) {
+                return m("div",[ m('h2', controller.user), m("p", "Something else here"), m("div", [m("a[href='/']", {config: m.route}, "Back")])])
+            }
+        };
+        
+       // m.module(document.getElementById("cm-wrapper"), app);
+
+        m.route(document.getElementById("cm-wrapper"), "/", {
+            "/": app,
+            "/app" : app,
+            "/home/:user": home
+        });
+
+    </script>
+  </body>
+</html>
