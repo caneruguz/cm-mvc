@@ -26,6 +26,10 @@
 (function(){
 "use strict";
 
+    // TODO: Make Wiki editable and record changes to activity.
+    // TODO : Structure the code into module pages
+
+
     /***************   APP   **************************/
     // App module  -- Sets global app variables and settings, does not generate views
     // Define module :
@@ -43,10 +47,11 @@
         this.desc = m.prop(data.desc);
         this.html = m.prop(data.html);
     }
-    // App doesn't have controllers or views.
 
     /***************   TEMPLATE MODULES   **************************/
-    // Quick modules for mainly view purposes
+    // Quick modules for mainly view purposes. These are built to mimic templates, they get reused for each page
+
+    // Navigation bar with pages
     var navbar = {
         controller : function(activePage){
             this.active = activePage;
@@ -62,7 +67,6 @@
                     aboutClass = ".active";
                     break;
             }
-            console.log(App.info());
             return [m("nav.navbar.navbar-default.navbar-static-top[role='navigation']", [
                 m(".container", [
                     m(".collapse.navbar-collapse[id='bs-example-navbar-collapse-1']", [
@@ -81,6 +85,7 @@
         }
     }
 
+    // Page titles and descriptions
     var header = {
         controller : function (pageInfo){
             this.page = pageInfo;
@@ -97,7 +102,7 @@
         }
     }
 
-
+    // Page footer
     var footer = {
         controller : function () {
 
@@ -111,21 +116,21 @@
     }
 
     /***************   HOME PAGE MODULES   **************************/
-    // Quick modules for mainly view purposes
 
-
-/* Wiki Module  */
-
+    /* Wiki Module  */
     var wiki = {};
 
+    // an example of loading into a Model
     wiki.Data = function () {
         this.wikis = m.request({method: "GET", url: "../wiki.json"});
     };
 
+    // Long way of binding the data to view
     wiki.controller = function(){
         this.wikiInfo = new wiki.Data();
     }
 
+    // Wiki html
     wiki.view = function (controller) {
         return m(".panel.panel-default", [
             m(".panel-heading", [
@@ -148,33 +153,43 @@
     };
 
 
-/* Logs Module  */
-
+    /* Logs Module  */
     var logs = {};
 
+    // Assign model directly to loaded content
     logs.List =  m.request({method: "GET", url: "../logs.json"});
 
-    logs.singleLog = function(logText){
+    // Model for individual logs
+    logs.singleLog = function(logType, logContent){
+        this.logText = "";
+        switch(logType){
+            case "comment" :
+               this.logText =  " commented ";
+                break;
+            case "wiki" :
+                this.logText = " changed wiki to version ";
+                break;
+        }
         this.logUser = App.info().appUser;
-        this.logUserID = App.info().appUserID;
-        this.logText = m.prop(logText);
+        this.logUserID = App.info().appUserID;;
         this.logDate = new Date();
+        this.logContent = logContent;
     }
 
+    // Log actions, add log
     logs.controller = function(){
-        this.logText = m.prop("");
-
-        this.add = function() {
-            if (this.logText()) {
-                logs.List.push(new logs.singleLog(this.logText));
-                this.logText("");
+        // This example is not using the m.prop getter and setter since direct javascript makes more sense for one time log writing.
+        // Add log -- This gets fired in the controller when comment is being added. Will implement for wiki as well.
+        this.add = function(logType) {
+            if (logType) {
+                logs.List.push(new logs.singleLog(logType));
             }
         }.bind(this);
 
     }
 
+    // Log layout, loads directly from the model, not through the controller.
     logs.view = function(controller){
-        console.log(logs.List());
         return [
             m("h4", "Activity Log "),
             m("table.table.table-condensed", [
@@ -188,6 +203,7 @@
                                     m("a[href='user/1']", log.logUser),
                                     " ",
                                     m("span.logText", log.logText),
+                                    m("i", log.logContent),
                                     ".\n                        "
                                 ])
                             ])
@@ -199,35 +215,40 @@
     }
 
     /* Comment Module */
-
     var comments = {};
 
+    // Load existing comments from server
     comments.List = m.request({method: "GET", url: "../comments.json"});
 
+    // Comment Model, uses information from the App about User.
     comments.comment = function(content){
            this.userid = App.info().appUserID;
            this.username = App.info().appUser;
-           this.content = m.prop(content);
+           this.content = content;
            this.date = new Date();
-
     }
 
     comments.controller = function (){
-
+        // Filter search term to use for filtering later.
         this.filterText = m.prop("");
-        console.log(this.filterText());
+
+        // Declare and empty setter for content of the comment to bind it to the form.
+        this.content = m.prop("");
+
         // add comment
-
-        this.filteredList = new comments.List();
-        this.filter = function(filteredList){
-            if(this.filterText()){
-
+        this.add = function () {
+            if(this.content()){
+                // New comment
+                comments.List().push(new comments.comment(this.content()));
+                // Log this behavior by adding a new Log model
+                logs.List().push(new logs.singleLog("comment", this.content()));
+                // Reset the form for new comments.
+                this.content("");
             }
-
-        }
-
+        }.bind(this);
     }
 
+    // Loads commenting form and list of comments
     comments.view = function(ctrl){
         return [" ",m(".row", [
             m(".col-sm-8.col-xs-12", [
@@ -244,10 +265,10 @@
                     m("[id='cm-boxWrapper']", [
                         m(".row", [
                             m(".col-xs-9", [
-                                m("textarea.cm-box")
+                                m("textarea.cm-box", {onchange: m.withAttr("value", ctrl.content), value: ctrl.content()})
                             ]),
                             m(".col-xs-3", [
-                                m("button.btn.btn-default.btn-block.btn-lg", " Add ")
+                                m("button.btn.btn-default.btn-block.btn-lg", {onclick: ctrl.add}, " Add ")
                             ])
                         ]),
                         m(".row", [
@@ -285,8 +306,7 @@
 
 
     /***************   ROUTING AND PAGES **************************/
-
-    /* Basic About page */
+    // Simple About page, uses the page components as templates.
     var about = {};
     about.controller = function(){
         this.pageInfo = new App.pageInfo({title : "About Us", active : "about", desc : "Learn more about us.", html : function(){return ""; }});
@@ -303,6 +323,8 @@
                 ])
             ];
     }
+
+    // Home page
     var home = {};
     home.controller = function(){
         this.pageInfo = new App.pageInfo({title : "Framework Application", active : "home", desc : "This page is built with Mithril.js. ", html : function(){ return m("a.btn.btn-info[href='http://lhorie.github.io/mithril/']", "Learn More"); }});
@@ -327,7 +349,7 @@
         ];
     }
 
-/* Route - Initializes the app */
+    /* Route - Initializes the app */
     m.route(document.body, "/", {
         "/": home,
         "/about" : about
