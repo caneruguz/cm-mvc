@@ -89,6 +89,9 @@
     display: block;
 }
 
+.tableshow {
+    display: table-row;
+}
 #wiki-edit{
     width: 100%;
     height: 400px;

@@ -292,6 +292,31 @@
                 this.content("");
             }
         }.bind(this);
+
+        // filtering
+        // Get the text
+        // Go through each comment
+        // Compare text
+        // If found, add to comment an attribute called cmshow
+        // If not found, add to the comment and attribute called cmhide
+        this.filter = function (){
+            var result;
+            if(this.filterText()){
+                comments.List().map(function(comment, index){
+                    result = comment.content.indexOf(this.filterText());
+                    if(result !== -1){
+                        comment.show = "tableshow";
+                    } else {
+                        comment.show = "cmhide"
+                    }
+                }.bind(this));
+            } else {
+                comments.List().map(function(comment, index){
+                        comment.show = "tableshow";
+                }.bind(this));
+            }
+            console.log(this.filterText());
+        }.bind(this);
     }
 
     // Loads commenting form and list of comments
@@ -304,7 +329,8 @@
                             m("h4", "Comments")
                         ]),
                         m(".col-xs-4", [
-                            m("input.form-control.input-sm[placeholder='filter'][type='text']", { onchange: m.withAttr("value", ctrl.filterText) , value : ctrl.filterText()} )
+                            m("input.form-control.input-sm[placeholder='filter'][type='text']", { onkeyup: m.withAttr("value", ctrl.filterText) , value : ctrl.filterText()} ),
+                                m("button.btn.btn-sm.btn-info", { onclick: ctrl.filter }, "Go")
                         ])
                     ]),
                     m("hr"),
@@ -322,7 +348,7 @@
                                 m("table.table.table-condensed", [
                                     m("tbody", [
                                         comments.List().map(function(comment, index){
-                                            return m("tr", [
+                                            return m("tr",{ class : comment.show }, [
                                                 m("td", [
                                                     m("b", comment.username)
                                                 ]),
