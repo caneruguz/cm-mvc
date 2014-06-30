@@ -81,3 +81,23 @@
 .mvc-div {
     text-align: center  ;
 }
+
+.cmhide {
+    display: none;
+}
+.cmshow {
+    display: block;
+}
+
+#wiki-edit{
+    width: 100%;
+    height: 400px;
+    padding: 9px;
+    white-space: pre-wrap;
+    border: 1px dashed #ccc;
+    resize: none;
+}
+
+#wiki-preview {
+    white-space: pre-line;
+}
