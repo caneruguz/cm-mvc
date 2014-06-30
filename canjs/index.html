@@ -16,17 +16,9 @@
 </head>
 <body>
 <div id="app" class="container">
-    <div id="cm-header" ></div>
-    <div id="cm-wrapper"></div>
 
 </div> <!-- Close Container  -->
 
-<div id="todo" class="container">
-
-</div>
-
-<div id="content">
-</div>
 
 
 
@@ -36,92 +28,61 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/bootstrap.min.js"></script>
 
+<script src="http://canjs.com/release/latest/can.jquery.js"></script>
+<script src="can.object.js"></script>
+<script src="can.fixture.js"></script>
 
-<script src="//canjs.com/release/2.0.4/can.jquery.js"></script>
-
-<script type="text/mustache" id="app-template">
-{{#if data.visible}}
-  <h1>{{data.message}}</h1>
-{{/if}}
-
-<ul>
-{{#each list}}
-  <li>
-    <b>{{username}}</b> :  {{content}}
-  </li>
-{{/each}}
-</ul>
-
-<p>
-  <i>created {{prettyDate time.createdAt}}</i>
-</p>
-
-</script>
 
 
 <script type="text/javascript">
 $(function(){
-// Give message a value
+"use strict";
 
-    var time = new can.Map({
-        createdAt : new Date()
+    /***************   APP   **************************/
+    // App module  -- Sets global app variables and settings, does not generate views
+    // Define module :
+
+    var App  = {
+        info : {},
+        script : {
+            title : "CanJS",
+            url : "http://canjs.com/"
+        },
+        pageInfo : {
+            title : "",
+            active : "",
+            desc : ""
+        }
+    };
+
+    var AppModel = can.Model({
+        findAll: 'GET /app'
+    }, {});
+
+
+    // App Fixture
+    // Mimics server connection
+    can.fixture("GET /app", function(){
+        return {
+            "data" : [
+                {
+                    "appTitle": "Framework Testing",
+                    "appDesc" : "Some description about the app. This data is being loaded from the server.",
+                    "appUser" : "Caner Uguz",
+                    "appUserID" : 1
+                }
+            ]
+
+        }
     });
 
-    var dateHelper = function ( date ) {
-        // compare the date passed in with 'now'
-        var timeElapsed = ( now() - date() ) / 1000;
-        if(timeElapsed < 1.2){
-            return "a second ago"
-        } else if (timeElapsed < 10 ) {
-            return "a couple seconds ago"
-        } else if (timeElapsed < 20 ) {
-            return "some seconds ago"
-        } else if (timeElapsed < 30 ){
-            return "a few seconds ago"
-        }  else if (timeElapsed < 40 ) {
-            return "a half min ago"
-        } else {
-            return Math.round(timeElapsed/60)+" min ago"
-        }
-    }
+    AppModel.findAll({}, function(app){ App.info =  app[0]; });
+    console.log(App.info.appTitle);
 
-    var now = can.compute( new Date() )
+    // Load information from server that will be the same for all apps
 
 
 
-    var data = new can.Map({message: "Hello World!", visible : true});
-
-    var list = new can.List([
-        {
-            username : "Caner", content : "My Message"
-        },
-        {
-            username: "Josh", content : "Another message"
-        },
-        {
-            username: "Caner", content : "something else"
-        }
-    ]);
-
-    var CommentList = can.Control.extend({
-        //behavior
-    });
-
-
-// Pass the id of the template and the data, containing our message to can.view
-    var frag = can.view("app-template", {list : list , data : data, time : time}, {prettyDate: dateHelper});
-//Load the DocumentFragment in the page
-    $("#my-app").html( frag);
-
-    setTimeout(function(){
-        list.push({username: "Steve", content: "Third message."});
-        data.attr("visible", false);
-    }, 2000);
-
-    setTimeout(function(){
-        now( new Date() );
-        setTimeout(arguments.callee, 1000);
-    }, 2000);
 
 });
 </script>

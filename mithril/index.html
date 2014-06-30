@@ -17,6 +17,7 @@
 <body>
 
 
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -25,10 +26,6 @@
 <script type="text/javascript">
 (function(){
 "use strict";
-
-    // TODO: Make Wiki editable and record changes to activity.
-    // TODO : Structure the code into module pages
-
 
     /***************   APP   **************************/
     // App module  -- Sets global app variables and settings, does not generate views
@@ -304,6 +301,7 @@
             if(this.filterText()){
                 comments.List().map(function(comment, index){
                     result = comment.content.indexOf(this.filterText());
+
                     if(result !== -1){
                         comment.show = "tableshow";
                     } else {
@@ -315,7 +313,13 @@
                         comment.show = "tableshow";
                 }.bind(this));
             }
-            console.log(this.filterText());
+            console.log('Filter text', this.filterText());
+
+        }.bind(this);
+
+        this.test = function(e){
+            m.withAttr("value", this.filterText)(e);
+            this.filter();
         }.bind(this);
     }
 
@@ -329,8 +333,7 @@
                             m("h4", "Comments")
                         ]),
                         m(".col-xs-4", [
-                            m("input.form-control.input-sm[placeholder='filter'][type='text']", { onkeyup: m.withAttr("value", ctrl.filterText) , value : ctrl.filterText()} ),
-                                m("button.btn.btn-sm.btn-info", { onclick: ctrl.filter }, "Go")
+                            m("input.form-control.input-sm[placeholder='filter'][type='text']", { onkeyup: ctrl.test, value : ctrl.filterText()} )
                         ])
                     ]),
                     m("hr"),

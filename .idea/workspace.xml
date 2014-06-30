@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="656610ed-85ca-46fa-9035-6e6bc1ab3419" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/canjs/can.object.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/index_old.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/mithril/index_theme.html" afterPath="$PROJECT_DIR$/index_theme.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canjs/index.html" afterPath="$PROJECT_DIR$/canjs/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/index.html" afterPath="$PROJECT_DIR$/mithril/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cm-mvc.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,6 +24,25 @@
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/mithril/index.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state line="375" column="18" selection-start="13651" selection-end="13651" vertical-scroll-proportion="0.62780267" vertical-offset="6800" max-vertical-offset="8840">
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="cm-mvc" />
@@ -29,7 +52,7 @@
       <file leaf-file-name="app.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="320">
+            <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="-7.6923075" vertical-offset="0" max-vertical-offset="320">
               <folding />
             </state>
           </provider>
@@ -38,7 +61,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="14" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0" vertical-offset="580" max-vertical-offset="1060">
+            <state line="29" column="14" selection-start="1140" selection-end="1140" vertical-scroll-proportion="-22.307692" vertical-offset="0" max-vertical-offset="1060">
               <folding />
             </state>
           </provider>
@@ -47,16 +70,7 @@
       <file leaf-file-name="comments.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comments.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="29" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1040">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/mithril/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="326" column="31" selection-start="11507" selection-end="11507" vertical-scroll-proportion="0.5509091" vertical-offset="5914" max-vertical-offset="8780">
+            <state line="28" column="29" selection-start="775" selection-end="775" vertical-scroll-proportion="-21.538462" vertical-offset="0" max-vertical-offset="1040">
               <folding />
             </state>
           </provider>
@@ -65,16 +79,34 @@
       <file leaf-file-name="mithril.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mithril/mithril.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="79" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0" vertical-offset="2080" max-vertical-offset="12560">
+            <state line="107" column="79" selection-start="4545" selection-end="4545" vertical-scroll-proportion="-82.30769" vertical-offset="0" max-vertical-offset="12560">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index_theme.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mithril/index_theme.html">
+        <entry file="file://$PROJECT_DIR$/index_theme.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920">
+            <state line="37" column="10" selection-start="1530" selection-end="1530" vertical-scroll-proportion="-28.461538" vertical-offset="0" max-vertical-offset="2920">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/canjs/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="7" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.7576887" vertical-offset="707" max-vertical-offset="1940">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="can.object.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/canjs/can.object.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="99" column="17" selection-start="3703" selection-end="3703" vertical-scroll-proportion="0.0" vertical-offset="1219" max-vertical-offset="2440">
               <folding />
             </state>
           </provider>
@@ -83,7 +115,7 @@
       <file leaf-file-name="logs.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/logs.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="36" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="420">
+            <state line="9" column="36" selection-start="238" selection-end="238" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="420">
               <folding />
             </state>
           </provider>
@@ -126,7 +158,6 @@
         <option value="$PROJECT_DIR$/mithril/home.js" />
         <option value="$PROJECT_DIR$/mithril/view.js" />
         <option value="$PROJECT_DIR$/canjs/js/contacts.js" />
-        <option value="$PROJECT_DIR$/canjs/index.html" />
         <option value="$PROJECT_DIR$/vuejs/index.html" />
         <option value="$PROJECT_DIR$/vuejs/asasd.js" />
         <option value="$PROJECT_DIR$/mithril/main.html" />
@@ -140,16 +171,19 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/wiki.json" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/index_theme.html" />
         <option value="$PROJECT_DIR$/mithril/index.html" />
+        <option value="$PROJECT_DIR$/canjs/can.object.js" />
+        <option value="$PROJECT_DIR$/canjs/index.html" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="234" />
+    <option name="x" value="1266" />
     <option name="y" value="22" />
-    <option name="width" value="2221" />
-    <option name="height" value="1283" />
+    <option name="width" value="1278" />
+    <option name="height" value="1272" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -241,7 +275,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
+              <option name="myItemId" value="canjs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -256,6 +290,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/mithril" />
     </key>
   </component>
@@ -302,7 +337,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="234" y="22" width="2221" height="1283" extended-state="0" />
+    <frame x="1266" y="22" width="1278" height="1272" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -310,7 +345,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.07664066" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.13511327" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -363,7 +398,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index_theme.html">
+    <entry file="file://$PROJECT_DIR$/index_theme.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920">
           <folding />
@@ -426,7 +461,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index_theme.html">
+    <entry file="file://$PROJECT_DIR$/index_theme.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920">
           <folding />
@@ -489,7 +524,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index_theme.html">
+    <entry file="file://$PROJECT_DIR$/index_theme.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920">
           <folding />
@@ -545,7 +580,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index_theme.html">
+    <entry file="file://$PROJECT_DIR$/index_theme.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920">
           <folding />
@@ -592,24 +627,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index_old.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="0" selection-start="712" selection-end="712" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2500" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/canjs/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="17" column="23" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.40463215" vertical-offset="603" max-vertical-offset="2720" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index_old.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="26" selection-start="739" selection-end="739" vertical-scroll-proportion="0.5270458" vertical-offset="0" max-vertical-offset="2500" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mithril/data2.json">
@@ -622,37 +642,44 @@
         <state line="22" column="25" selection-start="792" selection-end="792" vertical-scroll-proportion="0.39076376" vertical-offset="0" max-vertical-offset="1126" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comments.json">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="29" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index_theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920">
+        <state line="92" column="22" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="2220">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/logs.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="420">
+        <state line="9" column="36" selection-start="238" selection-end="238" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/mithril.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="79" selection-start="4545" selection-end="4545" vertical-scroll-proportion="-82.30769" vertical-offset="0" max-vertical-offset="12560">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comments.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="29" selection-start="775" selection-end="775" vertical-scroll-proportion="-21.538462" vertical-offset="0" max-vertical-offset="1040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index_theme.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="10" selection-start="1530" selection-end="1530" vertical-scroll-proportion="-28.461538" vertical-offset="0" max-vertical-offset="2920">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="14" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0" vertical-offset="580" max-vertical-offset="1060">
+        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="-7.6923075" vertical-offset="0" max-vertical-offset="320">
           <folding />
         </state>
       </provider>
@@ -664,23 +691,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="22" selection-start="1201" selection-end="1201" vertical-scroll-proportion="0.0" vertical-offset="915" max-vertical-offset="2220">
+        <state line="29" column="14" selection-start="1140" selection-end="1140" vertical-scroll-proportion="-22.307692" vertical-offset="0" max-vertical-offset="1060">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/mithril.js">
+    <entry file="file://$PROJECT_DIR$/canjs/can.object.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="79" selection-start="4545" selection-end="4545" vertical-scroll-proportion="0.0" vertical-offset="2080" max-vertical-offset="12560">
+        <state line="99" column="17" selection-start="3703" selection-end="3703" vertical-scroll-proportion="0.0" vertical-offset="1219" max-vertical-offset="2440">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mithril/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="326" column="31" selection-start="11507" selection-end="11507" vertical-scroll-proportion="0.5509091" vertical-offset="5914" max-vertical-offset="8780">
+        <state line="375" column="18" selection-start="13651" selection-end="13651" vertical-scroll-proportion="0.62780267" vertical-offset="6800" max-vertical-offset="8840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canjs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="7" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.7576887" vertical-offset="707" max-vertical-offset="1940">
           <folding />
         </state>
       </provider>
