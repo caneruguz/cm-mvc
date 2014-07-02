@@ -15,9 +15,25 @@
     <![endif]-->
 </head>
 <body>
-<div id="app" class="container">
+<div id="headers"></div>
+<div id="app">
+   <div class="container">
+    <div class="row">
+       <div class="col-md-8">
+           <div id="cm-wiki">
+
+           </div>
+           <div id="cm-comment">
+
+           </div>
+       </div>
+        <div class="col-md-4" id="cm-logs">
+        </div>
+    </div>
+   </div>
 
 </div> <!-- Close Container  -->
+<div id="footers"></div>
 
 
 
@@ -27,10 +43,9 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/bootstrap.min.js"></script>
-
 <script src="http://canjs.com/release/latest/can.jquery.js"></script>
-<script src="can.object.js"></script>
 <script src="can.fixture.js"></script>
+<script src="fixtures.js"></script>
 
 
 
@@ -42,51 +57,124 @@ $(function(){
     // App module  -- Sets global app variables and settings, does not generate views
     // Define module :
 
-    var App  = {
-        info : {},
-        script : {
-            title : "CanJS",
-            url : "http://canjs.com/"
-        },
-        pageInfo : {
-            title : "",
-            active : "",
-            desc : ""
+    var AppInfo ={}
+    var script = {
+        title : "CanJS",
+        url : "http://canjs.com/"
+    };
+    var pageInfo = function(activePage){
+        function ActiveState(title){
+            if(activePage === title) {
+                return "active";
+            } else {
+                return "";
+            }
         }
+        return [
+            {
+                title : "Home",
+                class : ActiveState("Home"),
+                desc : "Something about the home"
+            },
+            {
+                title : "About",
+                class : ActiveState("About"),
+                desc : "Something about the home"
+            }
+        ]
     };
 
+    var thisPage = pageInfo("Home");
+    // Model getting its data  from the server with the backend api
     var AppModel = can.Model({
         findAll: 'GET /app'
     }, {});
 
 
-    // App Fixture
-    // Mimics server connection
-    can.fixture("GET /app", function(){
-        return {
-            "data" : [
-                {
-                    "appTitle": "Framework Testing",
-                    "appDesc" : "Some description about the app. This data is being loaded from the server.",
-                    "appUser" : "Caner Uguz",
-                    "appUserID" : 1
-                }
-            ]
-
+    var AppControl = can.Control({
+        init: function(el, options) {
+            var self = this;
+            AppModel.findAll({}, function(app) {
+                self.element.html(can.view('view/header.mustache', { info : app[0], script : script, page : thisPage}));
+                $("#footers").html(can.view("view/footer.mustache", {}));
+            });
         }
     });
 
-    AppModel.findAll({}, function(app){ App.info =  app[0]; });
-    console.log(App.info.appTitle);
-
-    // Load information from server that will be the same for all apps
+    var loadApp = new AppControl ("#headers", {});
 
 
+    /*********  Wiki Module  ************/
+    // Define the Model
+    var WikiModel = can.Model({
+        findOne: 'GET /wiki/{id}'
+    }, {});
+
+    var WikiControl = can.Control({
+        init: function(el, options){
+            var self = this;
+            WikiModel.findOne({id: 1}, function(wiki){
+                self.element.html(can.view("view/wiki.mustache", { wiki : wiki }))
+            });
+        }
+    });
+
+    var loadWiki = new WikiControl ("#cm-wiki", {});
 
 
+    /*********  Logs Module  ************/
+    // Define the Model
+    var LogsModel = can.Model({
+        findAll: 'GET /logs',
+        findOne: 'GET /logs/{id}',
+        create:  'POST /logs',
+        update:  'PUT /logs/{id}',
+        destroy: 'DELETE /logs/{id}'
+    }, {});
+
+    var LogsControl = can.Control({
+        init: function(el, options){
+            var self = this;
+            LogsModel.findAll({}, function(logs){
+                self.element.html(can.view("view/log.mustache", { logs : logs }))
+            })
+        }
+    });
+
+    var loadLogs = new LogsControl("#cm-logs", {});
+
+
+    /*********  Comments Module  ************/
+    // Define the Model
+    var CommentsModel = can.Model({
+        findAll: 'GET /comment',
+        findOne: 'GET /comment/{id}',
+        create:  'POST /comment',
+        update:  'PUT /comment/{id}',
+        destroy: 'DELETE /comment/{id}'
+    }, {});
+
+     var CommentsControl = can.Control({
+       init : function(el, options){
+            var self = this;
+           this.comment = new CommentsModel.List({});
+           console.log(this.comment);
+           this.element.html(can.view("view/comments.mustache", {comments : this.comment} ));
+        }
+     });
+    var loadComments = new CommentsControl("#cm-comment", {});
+
+    can.Component.extend({
+        tag : "#cm-comment",
+        scope : {
+
+        },
+        template : "",
+        helpers : {},
+        events : {}
+
+    })
 });
 </script>
-<!-- CanJS needs a place to put your application -->
-<div id="my-app"></div>
 </body>
 </html>

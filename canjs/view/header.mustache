@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                {{#page}}
+                <li class=" {{class}}"><a href="#">{{title}} </a></li>
+                {{/page}}
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>You are logged in as {{ info.appUser}}</li>
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+<div class="jumbotron">
+    <div class="container">
+        <h2>{{info.appTitle}} with  {{script.title}} </h2>
+        <p>
+            {{info.appDesc}}
+        </p>
+        <p><a href="{{script.url}}" class="btn btn-primary btn-lg" role="button">Learn more about {{script.title}}</a></p>
+    </div>
+</div>

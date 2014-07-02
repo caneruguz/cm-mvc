@@ -1,0 +1,13 @@
+<h4>Activity Log </h4>
+<table class="table table-condensed">
+    {{#logs}}
+    <tr>
+        <td>
+            <span class="text-muted"> {{logDate}} </span>
+        </td>
+        <td>
+            {{logUser}}   {{logText }}  {{logContent}}.
+        </td>
+    </tr>
+    {{/logs}}
+</table>
