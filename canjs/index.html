@@ -21,11 +21,10 @@
     <div class="row">
        <div class="col-md-8">
            <div id="cm-wiki">
-
            </div>
-           <div id="cm-comment">
+            <div id="cm-comment">
+            </div>
 
-           </div>
        </div>
         <div class="col-md-4" id="cm-logs">
         </div>
@@ -53,6 +52,10 @@
 $(function(){
 "use strict";
 
+    can.route(":page");
+    can.route.ready();
+
+
     /***************   APP   **************************/
     // App module  -- Sets global app variables and settings, does not generate views
     // Define module :
@@ -62,69 +65,121 @@ $(function(){
         title : "CanJS",
         url : "http://canjs.com/"
     };
-    var pageInfo = function(activePage){
+    var pages = function() {
         function ActiveState(title){
-            if(activePage === title) {
+            if(can.route.attr("page") === title.toLowerCase()) {
                 return "active";
+                console.log(can.route.attr("page"), title.toLowerCase());
             } else {
                 return "";
             }
         }
-        return [
-            {
-                title : "Home",
-                class : ActiveState("Home"),
-                desc : "Something about the home"
-            },
-            {
-                title : "About",
-                class : ActiveState("About"),
-                desc : "Something about the home"
-            }
-        ]
+    return  [
+       {
+            title : "Home",
+            class : ActiveState("Home"),
+            desc : "Something about the home",
+            href : can.route.url({page: "home"})
+        },
+        {
+            title : "About",
+            class : ActiveState("About"),
+            desc : "This is the about page.",
+            href : can.route.url({page: "about"})
+
+        }
+    ];
+
     };
 
-    var thisPage = pageInfo("Home");
+
     // Model getting its data  from the server with the backend api
     var AppModel = can.Model({
         findAll: 'GET /app'
     }, {});
 
-
     var AppControl = can.Control({
         init: function(el, options) {
             var self = this;
             AppModel.findAll({}, function(app) {
-                self.element.html(can.view('view/header.mustache', { info : app[0], script : script, page : thisPage}));
-                $("#footers").html(can.view("view/footer.mustache", {}));
+                AppInfo = app[0];
+                var currentPage = {};
+                var pageReturn;
+                var isHome = true;
+                if(can.route.attr("page") === "about"){
+                    pageReturn = pages();
+                    currentPage = pageReturn[1];
+                    isHome = false;
+                } else{
+                    pageReturn = pages();
+                    currentPage = pageReturn[0];
+                    isHome = true;
+                }
+                console.log(can.route.attr());
+                self.element.html(can.view('view/header.mustache', { info : app[0], script : script, nav : pages, isHome : isHome, currentPage : currentPage}));
             });
         }
     });
 
-    var loadApp = new AppControl ("#headers", {});
+    var AboutControl = can.Control({
+        init : function(el, options){
+            this.element.html(can.view('view/about.mustache'), {});
+        }
+    })
 
 
     /*********  Wiki Module  ************/
     // Define the Model
-    var WikiModel = can.Model({
+    var WikiModel = can.Model.extend({
+        findAll: 'GET /wiki',
         findOne: 'GET /wiki/{id}'
     }, {});
 
+    var Wiki  = new can.Map({content : "", title: "", version : 0});
+    console.log(Wiki);
+    can.Component.extend({
+        tag : "cm-wiki",
+        scope : {
+            editMode : false,
+            previewMode : true,
+            wiki : Wiki,
+            title : "Hello",
+            content : "Something in here",
+            version : 1,
+            edit : function(){
+                this.attr("editMode", true);
+                this.attr("previewMode" , false);
+                console.log(this.editMode);
+            },
+            preview : function(){
+                this.attr("editMode", false);
+                this.attr("previewMode" , true);
+                this.attr("version", this.version+1);
+                var log = new Log("wiki", this.version);
+                console.log(this.editMode);
+
+            }
+
+        }
+    })
+
     var WikiControl = can.Control({
         init: function(el, options){
-            var self = this;
-            WikiModel.findOne({id: 1}, function(wiki){
-                self.element.html(can.view("view/wiki.mustache", { wiki : wiki }))
+            WikiModel.findOne({id :1 }, function(wiki){
+                Wiki.attr('content', wiki.content);
+                Wiki.attr('title', wiki.title);
+                Wiki.attr('version', wiki.version);
             });
+
+            this.element.html(can.view("view/wiki.mustache", {  }))
         }
     });
 
-    var loadWiki = new WikiControl ("#cm-wiki", {});
 
 
     /*********  Logs Module  ************/
     // Define the Model
-    var LogsModel = can.Model({
+    var LogsModel = can.Model.extend({
         findAll: 'GET /logs',
         findOne: 'GET /logs/{id}',
         create:  'POST /logs',
@@ -132,48 +187,136 @@ $(function(){
         destroy: 'DELETE /logs/{id}'
     }, {});
 
+    var Log = can.Construct.extend({
+        init : function(logType, logContent){
+            this.logText = "";
+            switch(logType){
+                case "comment" :
+                    this.logText =  " commented ";
+                    break;
+                case "wiki" :
+                    this.logText = " changed wiki to version ";
+                    break;
+            }
+            this.logUser = AppInfo.appUser;
+            this.logUserID = AppInfo.appUserID;;
+            this.logDate = new Date();
+            this.logContent = logContent;
+            var newLog = {loguserID : this.logUserID, logUser : this.logUser, logText : this.logText, logContent : this.logContent, logDate : this.logDate }
+            LogList.push(newLog);
+            console.log(LogList);
+        }
+    })
+
+    var LogList = new LogsModel.List({});
+
     var LogsControl = can.Control({
         init: function(el, options){
             var self = this;
             LogsModel.findAll({}, function(logs){
-                self.element.html(can.view("view/log.mustache", { logs : logs }))
+                self.element.html(can.view("view/log.mustache", { logs : LogList }))
             })
         }
     });
 
-    var loadLogs = new LogsControl("#cm-logs", {});
 
 
     /*********  Comments Module  ************/
     // Define the Model
-    var CommentsModel = can.Model({
+    var CommentsModel = can.Model.extend({
         findAll: 'GET /comment',
-        findOne: 'GET /comment/{id}',
         create:  'POST /comment',
         update:  'PUT /comment/{id}',
-        destroy: 'DELETE /comment/{id}'
     }, {});
 
-     var CommentsControl = can.Control({
-       init : function(el, options){
-            var self = this;
-           this.comment = new CommentsModel.List({});
-           console.log(this.comment);
-           this.element.html(can.view("view/comments.mustache", {comments : this.comment} ));
+    CommentsModel.findAll({}, function(comments) {
+        comments.each(function(comment, index){
+            comment.attr("show", true);
+        });
+    }, function(xhr) {
+        // handle errors
+    });
+
+    var CommentList = new CommentsModel.List({});
+    var Comment = can.Construct.extend({
+        init : function(content){
+            this.id = CommentsModel.List({}).length+5;
+            this.userid = AppInfo.appUserID;
+            this.content = content;
+            this.username = AppInfo.appUser;
+            this.date = new Date();
         }
-     });
-    var loadComments = new CommentsControl("#cm-comment", {});
+    });
+
 
     can.Component.extend({
-        tag : "#cm-comment",
+        tag : "cm-comment",
         scope : {
+            commentList : new CommentsModel.List({}),
+            filterText : "",
+            commentText : "",
+            createComment : function(){
+                // Add Comment
+                var commentContent = this.attr("commentText");
+                var addComment = new Comment(commentContent) ;
+                this.attr("commentText", "");
+                this.commentList.push(addComment);
+                // Log Behavior
+                var log = new Log("comment", commentContent);
+                console.log(log);
+            },
+            displayComments : function(context, el, event){
+                console.log(this.commentList);
+                var filter = this.attr("filterText").toLowerCase();
+                if(el.val){
+                    filter = el.val();
+                };
+               this.commentList.each(function (comment, index) {
+                   var content =   comment.content.toLowerCase();
+                   var result = content.indexOf(filter);
+                    if(result !== -1){
+                        comment.attr('show', true);
+                    } else {
+                        comment.attr('show', false);
+                    }
+                });
+            }
 
         },
-        template : "",
         helpers : {},
         events : {}
 
     })
+
+     var CommentsControl = can.Control({
+       init : function(el, options){
+           this.element.html(can.view("view/comments.mustache", {} ));
+       }
+     });
+
+
+    // Load Things
+    // Header section
+var LoadPages = function(){
+    var loadApp = new AppControl ("#headers", {});
+    $("#footers").html(can.view("view/footer.mustache", {}));
+    if(can.route.attr("page") === "about"){
+        var loadAbout = new AboutControl ("#app", {});
+        console.log(window.location.hash);
+    } else {
+        var loadComments = new CommentsControl("#cm-comment", {});
+        var loadLogs = new LogsControl("#cm-logs", {});
+        var loadWiki = new WikiControl ("#cm-wiki", {});
+        console.log(window.location.hash);
+    }
+
+}
+    LoadPages();
+
+    can.route.bind('page', function(ev, newVal, oldVal) {
+        LoadPages();
+    });
+
 });
 </script>
 </body>

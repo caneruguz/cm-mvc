@@ -1,29 +1,33 @@
+<cm-comment>
 <div class="row">
     <div class="col-xs-8"><h4>Comments</h4></div>
-    <div class="col-xs-4"><input placeholder="filter" type="text" class="form-control input-sm"></div>
+    <div class="col-xs-4"><input id="filterInput" placeholder="filter" type="text" class="form-control input-sm" can-value="filterText" can-keyup="displayComments"></div>
+
 </div>
 <hr>
 <div id="cm-boxWrapper">
-    <div class="row">
-        <div class="col-xs-9"><textarea class="cm-box"></textarea></div>
+        <div class="row">
+        <div class="col-xs-9"><textarea class="cm-box" can-value="commentText"></textarea></div>
         <div class="col-xs-3">
-            <button class="btn btn-default btn-block btn-lg"> Add</button>
+            <button class="btn btn-default btn-block btn-lg" can-click="createComment"> Add</button>
+            </div>
         </div>
-    </div>
     <div class="row">
         <div id="cm-commentList" class="col-xs-12">
             <table class="table table-condensed">
                 <tbody>
-                {{#comments}}
+                {{#each commentList}}
+                {{#show}}
                 <tr class=" undefined">
                     <td><b>{{username}}</b></td>
                     <td>{{content}}</td>
                     <td><span class="text-muted">{{date}}</span></td>
                 </tr>
-                {{/comments}}
-
+                {{/show}}
+                {{/each}}
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+</cm-comment>
