@@ -37,7 +37,7 @@
 	display: block;
 	resize: none;
 	border: 1px solid #ccc;
-	height: 70px;
+	height: 400px;
 }
 
 .cm-boxSubmit {
@@ -124,4 +124,15 @@
 
 #wiki-preview {
     white-space: pre-line;
+}
+
+.app-jumbotron {
+    background: lightcoral;
+    color: white;
+}
+.app-jumbotron h2 {
+    font-weight: 200;
+}
+.navbar-default {
+    border: none !important;
 }

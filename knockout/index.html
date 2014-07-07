@@ -15,18 +15,114 @@
     <![endif]-->
 </head>
 <body>
-<div id="headers"></div>
+<div id="headers">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" data-bind="foreach: listPages">
+                    <li data-bind="attr : { class : active}"><a data-bind="attr : { href : href}, text : title " ></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>You are logged in as <span data-bind="text: appInfo().appUser"> </span> </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="jumbotron app-jumbotron">
+        <div class="container">
+            <div data-bind="visible: isHome">
+                <h2><span data-bind="text : appInfo().appTitle"></span> with  <span data-bind="text: script.title"> </span></h2>
+                <p data-bind="text : appInfo().appDesc"></p>
+                <p><a data-bind="attr : {href : script.url}" class="btn btn-primary btn-lg" role="button">Learn more about <span data-bind="text: script.title"></span></a></p>
+          </div>
+
+            <div data-bind="visible: !isHome">
+                <h2 data-bind="text: ">{{currentPage.title}}  </h2>
+                <p>
+                    {{currentPage.desc}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="app">
     <div class="container">
         <div class="row">
             <div class="col-md-8">
-                <div id="cm-wiki">
+                <div id="cm-wiki" data-bind="">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div data-bind="visible: !editMode()"> <h2 class="panel-title" data-bind="text: wikiData().title" ></h2> </div>
+                                        <div data-bind="visible: editMode"> <input class="form-control" data-bind="value: wikiData().title" />   </div>
+
+                                    </div>
+                                    <div class="col-md-3 cm-wikiBar">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-sm btn-default" data-bind="css: {active : editMode }, click : editToggle" >Edit</button>
+                                            <button type="button" class="btn btn-sm btn-default" data-bind="css: {active : !editMode() }, click : editToggle"  >Preview</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                 <div data-bind="visible: !editMode(), text : wikiData().content"> </div>
+                                <div data-bind="visible: editMode"> <textarea class="cm-box" data-bind="value: wikiData().content">  </textarea> </div>
+
+                            </div>
+                            <div class="panel-footer">Wiki Version: <span data-bind="text: wikiData().version"></span></div>
+
+                        </div>
+
                 </div>
                 <div id="cm-comment">
+                        <div class="row">
+                            <div class="col-xs-8"><h4>Comments</h4></div>
+                            <div class="col-xs-4"><input id="filterInput" placeholder="filter" type="text" class="form-control input-sm" data-bind="value: filterText, valueUpdate : 'keyup'"></div>
+
+                        </div>
+                        <hr>
+                        <div id="cm-boxWrapper">
+                            <div class="row">
+                                <div class="col-xs-9"><textarea class="cm-box" data-bind="value: newCommentContent"></textarea></div>
+                                <div class="col-xs-3">
+                                    <button class="btn btn-default btn-block btn-lg" data-bind="click: addComment"> Add</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="cm-commentList" class="col-xs-12">
+                                    <table class="table table-condensed">
+                                        <tbody data-bind="foreach: filterComments">
+                                        <tr class=" undefined" >
+                                            <td><b data-bind="text:username" ></b></td>
+                                            <td><span data-bind="text: content"></span></td>
+                                            <td><span class="text-muted" data-bind="text: date"></span></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                 </div>
 
             </div>
             <div class="col-md-4" id="cm-logs">
+                <h4>Activity Log </h4>
+                <table class="table table-condensed">
+                    <tbody data-bind="foreach: logData">
+                    <tr>
+                        <td>
+                            <span class="text-muted" data-bind="text: logDate"> </span>
+                        </td>
+                        <td>
+                            <span data-bind="text: logUser"></span> <span data-bind="text: logText"></span>  <span data-bind="text: logContent"></span>.
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </div>
@@ -40,8 +136,29 @@
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/bootstrap.min.js"></script>
+<script src="knockout-3.1.0.js"></script>
+
+<script src="modules/app.js"></script>
+<script src="modules/wiki.js"></script>
+<script src="modules/comments.js"></script>
+<script src="modules/logs.js"></script>
+
 
 <script type="text/javascript">
+    (function () {
+
+        var app = new AppViewModel();
+        var log = new LogViewModel();
+        var wiki = new WikiViewModel();
+        var comment = new CommentViewModel();
+
+
+        ko.applyBindings(app, document.getElementById("headers"));
+        ko.applyBindings(wiki, document.getElementById("cm-wiki"));
+        ko.applyBindings(comment, document.getElementById("cm-comment"));
+        ko.applyBindings(log, document.getElementById("cm-logs"));
+
+    }());
 
 </script>
 
