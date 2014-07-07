@@ -59,20 +59,31 @@
 }
 
 .mvc-box {
-    border: 2px solid #ccc;
+    border: 6px solid #FFFFFF;
     padding: 60px 20px;
     text-align: center;
     font-size: 20px;
-    width: 150px;
+    width: 161px;
     margin: 0 auto;
-    border-radius: 75px;
+    border-radius: 80px;
+    margin-bottom: 40px;
 }
+.mvc-done {
+    border: 6px solid #FFFFFF;
+}
+.mvc-notdone {
+    border: 6px dotted #FFFFFF;
+}
+
 .mvc-box a {
     text-decoration: none !important;
-
+    color: white;
 }
 .mvc-box:hover {
-    box-shadow: 0 0 5px #ccc;
+    background: white;
+}
+.mvc-box:hover a {
+    color: #666;
 }
 .mvc-row {
     margin-top: 20px;
@@ -80,6 +91,16 @@
 
 .mvc-div {
     text-align: center  ;
+}
+
+.mvc-h2 {
+    color: white;
+    text-align: center;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.mvc-p {
+    color: white;
 }
 
 .cmhide {

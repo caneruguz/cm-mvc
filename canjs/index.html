@@ -45,9 +45,6 @@
 <script src="http://canjs.com/release/latest/can.jquery.js"></script>
 <script src="can.fixture.js"></script>
 <script src="fixtures.js"></script>
-
-
-
 <script type="text/javascript">
 $(function(){
 "use strict";
@@ -156,7 +153,7 @@ $(function(){
                 this.attr("previewMode" , true);
                 this.attr("version", this.version+1);
                 var log = new Log("wiki", this.version);
-                console.log(this.editMode);
+                console.log(this.version);
 
             }
 
@@ -245,6 +242,7 @@ $(function(){
             this.content = content;
             this.username = AppInfo.appUser;
             this.date = new Date();
+            this.show = true;
         }
     });
 
