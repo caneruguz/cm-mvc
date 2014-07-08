@@ -69,7 +69,7 @@
                             </div>
                             <div class="panel-body">
                                  <div data-bind="visible: !editMode(), text : wikiData().content"> </div>
-                                <div data-bind="visible: editMode"> <textarea id="wiki-edit" data-bind="value: wikiData().content">  </textarea> </div>
+                                <div data-bind="visible: editMode"> <textarea class="cm-box" data-bind="value: wikiData().content">  </textarea> </div>
 
                             </div>
                             <div class="panel-footer">Wiki Version: <span data-bind="text: wikiData().version"></span></div>
@@ -130,13 +130,33 @@
 </div> <!-- Close Container  -->
 <div id="footers"></div>
 
-<script data-main="scripts/scripts.js" src="scripts/vendor/require.js"></script>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="knockout-3.1.0.js"></script>
+
+<script src="modules/app.js"></script>
+<script src="modules/wiki.js"></script>
+<script src="modules/comments.js"></script>
+<script src="modules/logs.js"></script>
 
 
 <script type="text/javascript">
     (function () {
 
+        var app = new AppViewModel();
+        var log = new LogViewModel();
+        var wiki = new WikiViewModel();
+        var comment = new CommentViewModel();
 
+
+        ko.applyBindings(app, document.getElementById("headers"));
+        ko.applyBindings(wiki, document.getElementById("cm-wiki"));
+        ko.applyBindings(comment, document.getElementById("cm-comment"));
+        ko.applyBindings(log, document.getElementById("cm-logs"));
 
     }());
 

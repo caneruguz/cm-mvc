@@ -1,5 +1,3 @@
-define(['knockout', 'jquery', 'modules/app'], function ( ko, $, appInfo) {
-    var app = new appInfo();
     var LogViewModel = function(){
         var self = this;
         /***** LOGS *******/
@@ -28,5 +26,3 @@ define(['knockout', 'jquery', 'modules/app'], function ( ko, $, appInfo) {
         }
         return self;
     };
-    return LogViewModel;
-})

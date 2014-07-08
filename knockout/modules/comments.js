@@ -1,6 +1,4 @@
-define(['modules/logs', 'knockout', 'jquery', 'modules/app'], function (logs, ko, $, appInfo) {
-    var log = new logs();
-    var app = new appInfo()
+
     var CommentViewModel = function(){
         var self = this;
         /***** COMMENTS *******/
@@ -41,5 +39,3 @@ define(['modules/logs', 'knockout', 'jquery', 'modules/app'], function (logs, ko
             }
         });
     }
-    return CommentViewModel;
-})

@@ -1,5 +1,3 @@
-define(['modules/logs', 'knockout', 'jquery'], function (logs, ko, $) {
-    var log = new logs();
 
     var WikiViewModel = function(){
         var self = this;
@@ -28,6 +26,4 @@ define(['modules/logs', 'knockout', 'jquery'], function (logs, ko, $) {
 
         }
     }
-    return WikiViewModel;
-})
 
