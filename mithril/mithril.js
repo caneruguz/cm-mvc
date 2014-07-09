@@ -349,6 +349,13 @@ Mithril = m = new function app(window) {
 		}
 	}
 
+//    m.runWithBind = function(e, attr, value, callback){
+//        m.withAttr(attr, value)(e);
+//        //check type of callback.
+//        callback();
+//
+//    }
+
 	//routing
 	var modes = {pathname: "", hash: "#", search: "?"}
 	var redirect = function() {}, routeParams = {}, currentRoute

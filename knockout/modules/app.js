@@ -1,3 +1,7 @@
+var bs = require('../../js/bootstrap.min');
+var ko = require('../knockout');
+console.log(ko);
+global.window.ko = ko;
 var AppViewModel = function (){
 
     var self = this;
@@ -33,7 +37,7 @@ var AppViewModel = function (){
 
 }
 
-
+module.exports = AppViewModel;
 
 
 

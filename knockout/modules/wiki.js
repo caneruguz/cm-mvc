@@ -1,5 +1,8 @@
+var logLoad = require('./logs');
+var log = new logLoad.log();
+var app = logLoad.app;
 
-    var WikiViewModel = function(){
+var WikiViewModel = function(){
         var self = this;
         /***** WIKI *******/
             // Get Wiki json file.
@@ -25,5 +28,11 @@
             }
 
         }
+    }
+
+    module.exports = {
+        wiki : WikiViewModel,
+        log : log,
+        app : app
     }
 

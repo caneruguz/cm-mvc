@@ -1,5 +1,9 @@
+var wikiLoad = require('./wiki');
+var wiki = new wikiLoad.wiki();
+var app = wikiLoad.app;
+var log = wikiLoad.log;
 
-    var CommentViewModel = function(){
+var CommentViewModel = function(){
         var self = this;
         /***** COMMENTS *******/
         self.commentData = ko.observableArray([]);
@@ -20,7 +24,7 @@
         }
         self.addComment = function(){
             self.commentData.push(new CommentModel(self.newCommentContent()));
-            console.log(log.logData());
+            console.log(log.logData);
             log.logData.push(new log.LogModel("comment", self.newCommentContent()));
             self.newCommentContent("");
         }
@@ -39,3 +43,10 @@
             }
         });
     }
+
+    module.exports = {
+        comment : CommentViewModel,
+        app : app,
+        log : log,
+        wiki : wiki
+    };

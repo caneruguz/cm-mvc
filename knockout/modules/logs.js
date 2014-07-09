@@ -1,4 +1,7 @@
-    var LogViewModel = function(){
+var appLoad = require('./app');
+var app = new appLoad();
+
+var LogViewModel = function(){
         var self = this;
         /***** LOGS *******/
         self.logData = ko.observableArray([]);
@@ -24,5 +27,9 @@
             this.logDate = new Date();
             this.logContent = logContent;
         }
-        return self;
     };
+
+    module.exports = {
+        log : LogViewModel,
+        app : app
+    }
