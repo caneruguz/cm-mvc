@@ -1,0 +1,29 @@
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav" data-bind="foreach: listPages">
+                    <li data-bind="attr : { class : active}"><a data-bind="attr : { href : href}, text : title " ></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>You are logged in as <span data-bind="text: appInfo().appUser"> </span> </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="jumbotron app-jumbotron">
+        <div class="container">
+            <div data-bind="visible: isHome">
+                <h2><span data-bind="text : appInfo().appTitle"></span> with  <span data-bind="text: script.title"> </span></h2>
+                <p data-bind="text : appInfo().appDesc"></p>
+                <p><a data-bind="attr : {href : script.url}" class="btn btn-primary btn-lg" role="button">Learn more about <span data-bind="text: script.title"></span></a></p>
+            </div>
+
+            <div data-bind="visible: !isHome">
+                <h2 data-bind="text: ">{{currentPage.title}}  </h2>
+                <p>
+                    {{currentPage.desc}}
+                </p>
+            </div>
+        </div>
+    </div>

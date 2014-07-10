@@ -1,0 +1,30 @@
+{
+  "name": "boot",
+  "repo": "caneruguz/cm-mvc",
+  "description": "Start things up",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "paths" : [
+    "../libs",
+    "../comments",
+    "../logs",
+    "../wiki",
+    "../pages"
+  ],
+  "local" : [
+    "knockout"
+  ],
+  "scripts": [
+    "index.js"
+  ],
+  "templates": [
+    "template.html"
+  ],
+  "styles": [
+    "cm-mvc.css"
+  ]
+}

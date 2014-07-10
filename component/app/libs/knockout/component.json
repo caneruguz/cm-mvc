@@ -1,0 +1,14 @@
+{
+  "name": "knockout",
+  "repo": "caneruguz/knockout",
+  "description": "Knockout library with component info",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}

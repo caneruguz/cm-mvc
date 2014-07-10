@@ -1,0 +1,20 @@
+{
+  "name": "comments",
+  "repo": "caneruguz/comments",
+  "description": "Comments module",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {},
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ],
+  "templates": [
+    "template.html"
+  ],
+  "styles": [
+    "comments.css"
+  ]
+}

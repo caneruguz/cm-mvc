@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Application with Component</title>
+    <link rel="stylesheet" href="build/build.css">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+
+  </head>
+  <body>
+  <div id="headers">
+
+  </div>
+    <script src="build/build.js"></script>
+    <script>
+        var $ = require('component-jquery');
+        var app = require('boot');
+        var appheaders = require('boot/template.html');
+
+        $("#headers").html(appheaders);
+        console.log(appheaders);
+        ko.applyBindings(app, document.getElementById("headers"));
+
+
+    </script>
+  </body>
+</html>

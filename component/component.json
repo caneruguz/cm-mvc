@@ -1,0 +1,12 @@
+{
+  "name": "ComponentTrial",
+  "paths": [
+    "app"
+  ],
+  "local": [
+    "boot"
+  ],
+  "dependencies": {
+    "btknorr/bootstrap": "*"
+  }
+}
