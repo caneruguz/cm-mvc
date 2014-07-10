@@ -15,93 +15,98 @@
     <![endif]-->
 </head>
 <body>
+<div id="headers"></div>
 
 
+
+<div id="app">
+
+</div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://code.jquery.com/jquery.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="../js/bootstrap.min.js"></script>
+<script src="knockout-3.1.0.js"></script>
 <script src="mithril.js"></script>
+<script src="modules/app.js"></script>
+<script src="modules/logs.js"></script>
+<script src="modules/wiki.js"></script>
+<script src="modules/comments.js"></script>
+
 <script type="text/javascript">
 (function(){
 "use strict";
 
-    var DoubleBinding = function(source, run){
-        if(!source){console.log("Source is empty, please provide binding source by defining the variable")};
+//    /***************   APP   **************************/
+//    // App module  -- Sets global app variables and settings, does not generate views
+//    // Define module :
+//    var App = {};
+//    // Load information from server that will be the same for all apps
+//    App.info = m.request({method: "GET", url: "../app.json"});
+//    // Define information for this app only
+//    App.script = m.prop({
+//        title : "Mithril",
+//        url : "http://lhorie.github.io/mithril/"
+//    });
+//    App.pageInfo = function(data){
+//        this.title = m.prop(data.title);
+//        this.active = m.prop(data.active);
+//        this.desc = m.prop(data.desc);
+//        this.html = m.prop(data.html);
+//    }
 
 
-    }
 
-    /***************   APP   **************************/
-    // App module  -- Sets global app variables and settings, does not generate views
-    // Define module :
-    var App = {};
-    // Load information from server that will be the same for all apps
-    App.info = m.request({method: "GET", url: "../app.json"});
-    // Define information for this app only
-    App.script = m.prop({
-        title : "Mithril",
-        url : "http://lhorie.github.io/mithril/"
-    });
-    App.pageInfo = function(data){
-        this.title = m.prop(data.title);
-        this.active = m.prop(data.active);
-        this.desc = m.prop(data.desc);
-        this.html = m.prop(data.html);
-    }
+    var appKO = new AppViewModel();
+    var logsKO = new LogViewModel();
+    var wikiKO = new WikiViewModel();
+    var commentsKO = new CommentViewModel();
 
     /***************   TEMPLATE MODULES   **************************/
     // Quick modules for mainly view purposes. These are built to mimic templates, they get reused for each page
 
     // Navigation bar with pages
-    var navbar = {
-        controller : function(activePage){
-            this.active = activePage;
+    var headers = {
+        controller : function(){
+           var self = this;
+           this.app  = appKO;
+           this.postRender = function(element, isInitialized, context){
+               if(!isInitialized){
+                   ko.applyBindings(self.app, document.getElementById("headers"))
+               }
+           }
         },
         view : function(ctrl){
-            var homeClass = "";
-            var aboutClass ="";
-            switch (ctrl.active) {
-                case "home":
-                    homeClass = ".active";
-                    break;
-                case "about" :
-                    aboutClass = ".active";
-                    break;
-            }
-            return [m("nav.navbar.navbar-default.navbar-static-top[role='navigation']", [
-                m(".container", [
-                    m(".collapse.navbar-collapse[id='bs-example-navbar-collapse-1']", [
-                        m("ul.nav.navbar-nav", [
-                            m("li"+homeClass, [m("a[href='?/home']", "Home")]),
-                            m("li"+aboutClass, [m("a[href='?/about']", "About")])
-                        ]),
-                        m("ul.nav.navbar-nav.navbar-right", [
-                            m("li", [m("a", "You are logged in as " + App.info().appUser)])
+            return [
+                [
+                    m("nav.navbar.navbar-default.navbar-static-top[role='navigation']", { config : ctrl.postRender} , [
+                        m(".container", [
+                            m(".collapse.navbar-collapse[id='bs-example-navbar-collapse-1']", [
+                                m("ul.nav.navbar-nav[data-bind='foreach: listPages']", [
+                                    m("li[data-bind='attr : { class : active}']", [m("a[data-bind='attr : { href : href}, text : title ']")])
+                                ]),
+                                m("ul.nav.navbar-nav.navbar-right", [
+                                    m("li", ["You are logged in as ",m("span[data-bind='text: appInfo().appUser']", " ")," "])
+                                ])
+                            ])
+                        ])
+                    ]),
+                    m(".jumbotron.app-jumbotron", [
+                        m(".container", [
+                            m("[data-bind='visible: isHome']", [
+                                m("h2", [m("span[data-bind='text : appInfo().appTitle']")," with  ",m("span[data-bind='text: script.title']", " ")]),
+                                m("p[data-bind='text : appInfo().appDesc']"),
+                                m("p", [m("a.btn.btn-primary.btn-lg[data-bind='attr : {href : script.url}'][role='button']", ["Learn more about ",m("span[data-bind='text: script.title']")])])
+                            ]),
+                            m("[data-bind='visible: !isHome']", [
+                                m("h2[data-bind='text: ']", "{{currentPage.title}}  "),
+                                m("p", "\n                    {{currentPage.desc}}\n                ")
+                            ])
                         ])
                     ])
-                ]),
-                "\n"
-            ])
+                ]
             ]
-        }
-    }
-
-    // Page titles and descriptions
-    var header = {
-        controller : function (pageInfo){
-            this.page = pageInfo;
-        },
-        view : function (ctrl){
-           return  m(".jumbotron", [
-                m(".container", [
-                    m("h2", ctrl.page.title()),
-                    m("p", ctrl.page.desc()),
-                    m("p", ctrl.page.html()())
-                ]),
-                "\n"
-            ]);
         }
     }
 
@@ -119,86 +124,61 @@
     }
 
     /***************   HOME PAGE MODULES   **************************/
-
     /* Wiki Module  */
     var wiki = {};
 
     // an example of loading into a Model
-    wiki.Data = function () {
-        return m.request({method: "GET", url: "../wiki.json"});
-    };
 
     // Long way of binding the data to view
     wiki.controller = function(){
-        this.content = m.prop("");
-        this.title = m.prop("");
-        this.wikiInfo = wiki.Data().then(function(info){
-            this.content(info.content);
-            this.title(info.title);
-        }.bind(this));
-        this.version = 1;
-        this.edit = m.prop("cmhide");
-        this.preview = m.prop("cmshow");
+        var self = this;
+        self.wiki = wikiKO;
+        self.wikiContent = m.prop({});
+        var addData = function(){
+            console.log(self.wiki.wikiData());
+            self.wiki.wikiData(new self.wiki.WikiModel(self.wikiContent()));
+        }
 
-        // when the edit button is clicked.
-            // Render editable title
-            // Render editable textarea with the information in it
+        m.request({method: "GET", url: "../wiki.json"}).then(self.wikiContent).then(addData);
 
-        this.showEdit = function (){
-            this.edit("cmshow");
-            this.preview("cmhide");
-        }.bind(this);
-
-        // When the preview button is clicked
-        // Render static title
-        // Render static text
-        this.showPreview = function(){
-            this.edit("cmhide");
-            this.preview("cmshow");
-            this.version++;
-            logs.List().push(new logs.singleLog("wiki", this.version));
-        }.bind(this);
+        this.postRender = function(element, isInitialized, context){
+            if(!isInitialized){
+                ko.applyBindings(self.wiki, document.getElementById("cm-wiki"))
+            }
+        }
 
     }
 
     // Wiki html
     wiki.view = function (controller) {
-        return [ m(".panel.panel-default", { class : controller.preview() }, [
-            m(".panel-heading", [
-                m(".row", [
-                    m(".col-md-9", [
-                        m("h2.panel-title", controller.title())
-                    ]),
-                    m(".col-md-3.cm-wikiBar", [
-                        m(".btn-group", [
-                            m("button.btn.btn-sm.btn-default[type='button']",{ onclick : controller.showEdit }, "Edit"),
-                            m("button.btn.btn-sm.btn-default.active[type='button']", "Preview")
+        return [
+            [m(".panel.panel-default", { config: controller.postRender }, [
+                m(".panel-heading", [
+                    m(".row", [
+                        m(".col-md-9", [
+                            m("[data-bind='visible: !editMode()']", [" ",m("h2.panel-title[data-bind='text: wikiData().title']")," "]),
+                            m("[data-bind='visible: editMode']", [
+                                " ",
+                                m("input.form-control[data-bind='value: wikiData().title']")
+                            ])
+                        ]),
+                        m(".col-md-3.cm-wikiBar", [
+                            m(".btn-group", [
+                                m("button.btn.btn-sm.btn-default[data-bind='css: {active : editMode }, click : editToggle'][type='button']", "Edit"),
+                                m("button.btn.btn-sm.btn-default[data-bind='css: {active : !editMode() }, click : editToggle'][type='button']", "Preview")
+                            ])
                         ])
                     ])
-                ])
-            ]),
-            m(".panel-body", [
-                m("p#wiki-preview", controller.content())
-            ])
-        ]),
-        m(".panel.panel-default", { class : controller.edit() }, [
-            m(".panel-heading", [
-                m(".row", [
-                    m(".col-md-9", [
-                        m("span", "Change Title: "), m("input.form-control", { onchange: m.withAttr("value", controller.title), value: controller.title()} )
-                    ]),
-                    m(".col-md-3.cm-wikiBar", [
-                        m(".btn-group", [
-                            m("button.btn.btn-sm.btn-default.active[type='button']", "Edit"),
-                            m("button.btn.btn-sm.btn-default[type='button']",{onclick : controller.showPreview }, "Preview")
-                        ])
-                    ])
-                ])
-            ]),
-            m(".panel-body", [
-                m("textarea#wiki-edit", { onchange: m.withAttr("value", controller.content), value: controller.content()} )
-            ])
-        ])]
+                ]),
+                m(".panel-body", [
+                    m("[data-bind='visible: !editMode(), text : wikiData().content']", " "),
+                    m("[data-bind='visible: editMode']", [" ",m("textarea.cm-box[data-bind='value: wikiData().content']", [
+
+                    ])," "])
+                ]),
+                m(".panel-footer", ["Wiki Version: ",m("span[data-bind='text: wikiData().version']")])
+            ])]
+        ]
     };
 
 
@@ -386,6 +366,10 @@
 
 
 
+
+
+
+
     /***************   ROUTING AND PAGES **************************/
     // Simple About page, uses the page components as templates.
     var about = {};
@@ -405,20 +389,22 @@
             ];
     }
 
+
+
     // Home page
     var home = {};
     home.controller = function(){
-        this.pageInfo = new App.pageInfo({title : "Framework Application", active : "home", desc : "This page is built with Mithril.js. ", html : function(){ return m("a.btn.btn-info[href='http://lhorie.github.io/mithril/']", "Learn More"); }});
-        this.navControl = new navbar.controller(this.pageInfo.active());
-        this.headerControl = new header.controller(this.pageInfo);
+        //this.pageInfo = new App.pageInfo({title : "Framework Application", active : "home", desc : "This page is built with Mithril.js. ", html : function(){ return m("a.btn.btn-info[href='http://lhorie.github.io/mithril/']", "Learn More"); }});
+        //this.navControl = new navbar.controller(this.pageInfo.active());
+        m.module(document.getElementById("headers"), headers);
+
         this.wikiControl = new wiki.controller();
         this.logsControl = new logs.controller();
         this.commentsControl = new comments.controller();
+
     }
     home.view = function (ctrl){
         return [
-            navbar.view(ctrl.navControl),
-            header.view(ctrl.headerControl),
             m("div.container", [
                 m("div.row", [
                     m("div.col-md-8#cm-wiki", wiki.view(ctrl.wikiControl)),
@@ -431,13 +417,14 @@
     }
 
     /* Route - Initializes the app */
-    m.route(document.body, "/", {
+    m.route(document.getElementById("app"), "/", {
         "/": home,
         "/about" : about
     });
 
 
-    }());
+
+}());
 </script>
 </body>
 </html>

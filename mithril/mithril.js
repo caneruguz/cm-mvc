@@ -287,7 +287,7 @@ Mithril = m = new function app(window) {
 		var node = root == window.document || root == window.document.documentElement ? documentNode : root
 		cellCache[id] = build(node, null, undefined, undefined, cell, cellCache[id], false, 0, null, undefined, configs)
 		for (var i = 0; i < configs.length; i++) configs[i]()
-	}
+    }
 
 	m.trust = function(value) {
 		value = new String(value)
