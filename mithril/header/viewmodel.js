@@ -1,3 +1,5 @@
+// Using knockout viewmodel and knockout html
+
 var AppViewModel = function (){
 
     var self = this;
