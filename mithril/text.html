@@ -15,17 +15,34 @@
     <![endif]-->
 </head>
 <body>
-<div id="header"></div>
+<div id="headers"></div>
 <div id="app"></div>
 <hr />
 <div id="footer" class="text-muted">
-    <div class="container">
-        Built by COS
-    </div>
+    Built by COS
 </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../js/bootstrap.min.js"></script>
+<script src="lib/knockout.js"></script>
+<script src="lib/mithril.js"></script>
 
-<script src="lib/mustache.js"></script>
-<script src="bundle.js"></script>
+<script type="text/javascript">
+    (function(){
 
+        var test = {};
+        test.controller = function(){
+            this.value = "Hello";
+        }
+        test.view = function (ctrl){
+            return m.trust("<b> Strong Hello</b>");
+
+        }
+
+        m.module(document.getElementById("app"), test);
+
+    }());
+</script>
 </body>
 </html>

@@ -1,11 +1,23 @@
+var header = require('../../header/view');
+global.window.header = header;
+
+var comments  = require('../../comments/view');
+var wiki = require('../../wiki/view');
+
+var logs = require('../../logs/view');
+global.window.logs = logs;
+
 // Home page
 var home = {};
 home.controller = function(){
-    //this.pageInfo = new App.pageInfo({title : "Framework Application", active : "home", desc : "This page is built with Mithril.js. ", html : function(){ return m("a.btn.btn-info[href='http://lhorie.github.io/mithril/']", "Learn More"); }});
-    //this.navControl = new navbar.controller(this.pageInfo.active());
-    m.module(document.getElementById("headers"), headers);
+    console.log(header.app);
+
+    header.app.currentPage("home");
+    m.module(document.getElementById("header"), header);
 
     this.wikiControl = new wiki.controller();
     this.logsControl = new logs.controller();
     this.commentsControl = new comments.controller();
 }
+console.log(comments, wiki, home)
+module.exports = { home : home, wiki : wiki, comments : comments};

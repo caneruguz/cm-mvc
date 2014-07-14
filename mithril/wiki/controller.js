@@ -1,3 +1,5 @@
+var wikiViewModel = require('./viewmodel');
+
 /***************   HOME PAGE MODULES   **************************/
 /* Wiki Module  */
 var wiki = {};
@@ -7,7 +9,7 @@ var wiki = {};
 // Long way of binding the data to view
 wiki.controller = function(){
     var self = this;
-    self.wiki = wikiKO;
+    self.wiki = new wikiViewModel();
     self.wikiContent = m.prop({});
     var addData = function(){
         console.log(self.wiki.wikiData());
@@ -23,3 +25,5 @@ wiki.controller = function(){
     }
 
 }
+
+module.exports = wiki;

@@ -36,6 +36,8 @@ logs.controller = function(){
 
 }
 
+module.exports = logs;
+
 // Knockout Version
 //    var LogViewModel = function(){
 //        var self = this;

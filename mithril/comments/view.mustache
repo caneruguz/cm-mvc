@@ -1,0 +1,40 @@
+<div id="cm-comment" class="col-xs-12">
+    <div class="row">
+        <div class="col-xs-8">
+            <h4>Comments ==</h4>
+        </div>
+        <div class="col-xs-4">
+            <input type="text" class="form-control input-sm" placeholder="filter">
+        </div>
+
+    </div>
+    <hr/>
+    <div id="cm-boxWrapper">
+        <div class="row">
+            <div class="col-xs-9">
+                <textarea class="cm-box"></textarea>
+            </div>
+            <div class="col-xs-3">
+                <button class="btn btn-default btn-block btn-lg"> Add This </button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="cm-commentList" class="col-xs-12">
+                <table class="table table-condensed">
+                    {{#comments}}
+                    <tr>
+                        <td>
+                            <b>{{username}} </b>
+                        </td>
+                        <td>{{content}}</td>
+                        <td>
+                            <span class="text-muted">{{date}} </span>
+                        </td>
+                    </tr>
+                    {{/comments}}
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

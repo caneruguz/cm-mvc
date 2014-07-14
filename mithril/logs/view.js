@@ -1,3 +1,5 @@
+var logs = require('./controller')
+
 // Log layout, loads directly from the model, not through the controller.
 logs.view = function(controller){
     return [
@@ -23,3 +25,5 @@ logs.view = function(controller){
         ])
     ]
 }
+
+module.exports = logs;

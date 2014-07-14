@@ -1,3 +1,5 @@
+var wiki = require('./controller');
+
 // Wiki html
 wiki.view = function (controller) {
     return [
@@ -13,7 +15,7 @@ wiki.view = function (controller) {
                     ]),
                     m(".col-md-3.cm-wikiBar", [
                         m(".btn-group", [
-                            m("button.btn.btn-sm.btn-default[data-bind='css: {active : editMode }, click : editToggle'][type='button']", "Edit"),
+                            m("button.btn.btn-sm.btn-default[data-bind='css: {active : editMode }, click : editToggle'][type='button']", "Edit1231"),
                             m("button.btn.btn-sm.btn-default[data-bind='css: {active : !editMode() }, click : editToggle'][type='button']", "Preview")
                         ])
                     ])
@@ -21,7 +23,7 @@ wiki.view = function (controller) {
             ]),
             m(".panel-body", [
                 m("[data-bind='visible: !editMode(), text : wikiData().content']", " "),
-                m("[data-bind='visible: editMode']", [" ",m("textarea.cm-box[data-bind='value: wikiData().content']", [
+                m("[data-bind='visible: editMode']", [" ",m("textarea#wiki-edit[data-bind='value: wikiData().content']", [
 
                 ])," "])
             ]),
@@ -29,3 +31,5 @@ wiki.view = function (controller) {
         ])]
     ]
 };
+
+module.exports = wiki;

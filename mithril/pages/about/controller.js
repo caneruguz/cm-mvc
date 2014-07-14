@@ -1,7 +1,18 @@
+var header = require('../../header/view');
+global.window.header = header;
+var logs = require('../../logs/view');
+global.window.log = logs;
+
 // Simple About page, uses the page components as templates.
 var about = {};
+
 about.controller = function(){
-    this.pageInfo = new App.pageInfo({title : "About Us", active : "about", desc : "Learn more about us.", html : function(){return ""; }});
-    this.navControl = new navbar.controller(this.pageInfo.active());
-    this.headerControl = new header.controller(this.pageInfo);
+
+    header.app.currentPage("about");
+    header.app.thisPage({title: "About Us", desc : "This is the about page. "});
+    console.log(header.app.currentPage());
+    console.log(header.app.isHome());
+    m.module(document.getElementById("header"), header);
 }
+
+module.exports = about;
