@@ -1,14 +1,15 @@
 /* Logs Module  */
 // Using only Mithril
+var header = require('../header/view');
 
 
-var logs = {};
+var log = {};
 
 // Assign model directly to loaded content
-logs.List =  m.request({method: "GET", url: "../logs.json"});
+log.List =  m.request({method: "GET", url: "../logs.json"});
 
 // Model for individual logs
-logs.singleLog = function(logType, logContent){
+log.singleLog = function(logType, logContent){
     this.logText = "";
     switch(logType){
         case "comment" :
@@ -18,25 +19,28 @@ logs.singleLog = function(logType, logContent){
             this.logText = " changed wiki to version ";
             break;
     }
-    this.logUser = App.info().appUser;
-    this.logUserID = App.info().appUserID;;
-    this.logDate = new Date();
-    this.logContent = logContent;
+    return {
+        logUser : header.app.appInfo().appUser,
+        logUserID : header.app.appInfo().appUserID,
+        logDate : new Date(),
+        logContent : logContent,
+        logText : this.logText
+    }
 }
 
 // Log actions, add log
-logs.controller = function(){
+log.controller = function(){
     // This example is not using the m.prop getter and setter since direct javascript makes more sense for one time log writing.
     // Add log -- This gets fired in the controller when comment is being added. Will implement for wiki as well.
     this.add = function(logType) {
         if (logType) {
-            logs.List.push(new logs.singleLog(logType));
+            log.List().push(new logs.singleLog(logType));
         }
     }.bind(this);
 
 }
 
-module.exports = logs;
+module.exports = log;
 
 // Knockout Version
 //    var LogViewModel = function(){

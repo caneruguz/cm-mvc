@@ -45,15 +45,20 @@
     /* Comment Module */
     var comments = {};
 
+    console.log("Hey");
     // Load existing comments from server
     comments.List = m.request({method: "GET", url: "../comments.json"});
 
     // Comment Model, uses information from the App about User.
     comments.comment = function(content){
-        this.userid = App.info().appUserID;
-        this.username = App.info().appUser;
-        this.content = content;
-        this.date = new Date();
+        return {
+
+        userid :  header.app.appInfo().appUserID,
+        username : header.app.appInfo().appUser,
+        content : content,
+        date : new Date()
+
+         }
     }
 
 module.exports = comments;

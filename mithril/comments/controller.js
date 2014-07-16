@@ -1,33 +1,64 @@
 var comments = require('./viewmodel');
+var Mustache = require('../lib/mustache');
+var log = require('../logs/view');
+var $ = require('../../js/jquery');
 
     comments.controller = function (){
+        var self = this;
         // Filter search term to use for filtering later.
         this.filterText = m.prop("");
 
         // Declare and empty setter for content of the comment to bind it to the form.
         this.content = m.prop("");
 
-        // add comment
-        this.add = function () {
-            if(this.content()){
-                // New comment
-                comments.List().push(new comments.comment(this.content()));
-                // Log this behavior by adding a new Log model
-                logs.List().push(new logs.singleLog("comment", this.content()));
-                // Reset the form for new comments.
-                this.content("");
-            }
-        }.bind(this);
+        // add comment Mithril way
+//        this.add = function () {
+//            if(this.content()){
+//                // New comment
+//                comments.List().push(new comments.comment(this.content()));
+//                // Log this behavior by adding a new Log model
+//                logs.List().push(new logs.singleLog("comment", this.content()));
+//                // Reset the form for new comments.
+//                this.content("");
+//            }
+//        }.bind(this);
+
+        // Add Comment with jquery and mustache
+        $(document).on('click', '#addComment', function(){
+            var commentText = $('#commentText').val();
+            comments.List().push(new comments.comment(commentText));
+            log.List().push(new log.singleLog("comment", commentText));
+            console.log("Comments", comments.List());
+            getMustache();
+            m.redraw();
+
+        })
+        $(document).on('keyup', '#filterText', function(){
+            var text = $('#filterText').val();
+            self.filterText(text);
+            self.filter();
+//            m.redraw()
+  //          console.log(text);
+        })
+
+
+        this.file = m.prop("");
+        this.template= m.prop("");
 
         // Get mustache template
-        this.file = m.prop("");
-        var deserialize = function (value){
-            return value;
+        var getMustache = function(){
+             var deserialize = function (value){
+                return value;
+            }
+            var writeTemplate = function (){
+                self.template(Mustache.render(
+                    self.file(),
+                    { list : comments.List()}
+                ));
+            }
+            m.request({method: "GET", url: "./comments/view.mustache", deserialize: deserialize}).then(self.file).then(writeTemplate);
         }
-        m.request({method: "GET", url: "./comments/view.mustache", deserialize: deserialize}).then(this.file);
-
-        this.template = Mustache.render(this.template(), comments.List());
-
+        getMustache();
         // filtering
         // Get the text
         // Go through each comment
@@ -51,6 +82,8 @@ var comments = require('./viewmodel');
                     comment.show = "tableshow";
                 }.bind(this));
             }
+            console.log(comments.List());
+            getMustache();
             console.log('Filter text', this.filterText());
 
         }.bind(this);

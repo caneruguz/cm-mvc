@@ -1758,7 +1758,7 @@
 	}
 ;
 
-	// ## view.js
+	// ## view_old.js
 	// `can.view`  
 	// _Templating abstraction._
 

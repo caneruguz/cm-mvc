@@ -15,7 +15,7 @@ wiki.view = function (controller) {
                     ]),
                     m(".col-md-3.cm-wikiBar", [
                         m(".btn-group", [
-                            m("button.btn.btn-sm.btn-default[data-bind='css: {active : editMode }, click : editToggle'][type='button']", "Edit1231"),
+                            m("button.btn.btn-sm.btn-default[data-bind='css: {active : editMode }, click : editToggle'][type='button']", "Edit"),
                             m("button.btn.btn-sm.btn-default[data-bind='css: {active : !editMode() }, click : editToggle'][type='button']", "Preview")
                         ])
                     ])

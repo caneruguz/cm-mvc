@@ -1,5 +1,6 @@
+var log = require('../logs/view');
 
-    var WikiViewModel = function(){
+var WikiViewModel = function(){
         var self = this;
         /***** WIKI *******/
             // Get Wiki json file.
@@ -19,7 +20,9 @@
                 self.editMode(false);
                 var version = self.wikiData().version();
                 self.wikiData().version(version+1);
-                log.logData.push(new log.LogModel("wiki", self.wikiData().version()))
+                log.List().push(new log.singleLog("wiki", self.wikiData().version()))
+                console.log(log.List());
+                m.redraw();
             } else {
                 self.editMode(true);
             }

@@ -2,26 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="656610ed-85ca-46fa-9035-6e6bc1ab3419" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mithril/header/template.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mithril/text.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/knockout/knockout-3.1.0.js" afterPath="$PROJECT_DIR$/knockout/knockout.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mithril/lib/knockout-3.1.0.js" afterPath="$PROJECT_DIR$/mithril/lib/knockout.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/mithril/logs/logs.js" afterPath="$PROJECT_DIR$/mithril/logs/controller.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mithril/lib/convert.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mithril/lib/mithrilify.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mithril/header/text.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/mithril/header/view_old.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/header/view.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/app.js" afterPath="$PROJECT_DIR$/mithril/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/bundle.js" afterPath="$PROJECT_DIR$/mithril/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canjs/can.jquery.js" afterPath="$PROJECT_DIR$/canjs/can.jquery.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/comments/controller.js" afterPath="$PROJECT_DIR$/mithril/comments/controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/header/controller.js" afterPath="$PROJECT_DIR$/mithril/header/controller.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/logs/controller.js" afterPath="$PROJECT_DIR$/mithril/logs/controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/pages/about/controller.js" afterPath="$PROJECT_DIR$/mithril/pages/about/controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/pages/home/controller.js" afterPath="$PROJECT_DIR$/mithril/pages/home/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/wiki/controller.js" afterPath="$PROJECT_DIR$/mithril/wiki/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knockout/index.html" afterPath="$PROJECT_DIR$/knockout/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/index.html" afterPath="$PROJECT_DIR$/mithril/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/index2.html" afterPath="$PROJECT_DIR$/mithril/index2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/comments/view.js" afterPath="$PROJECT_DIR$/mithril/comments/view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/header/view.js" afterPath="$PROJECT_DIR$/mithril/header/view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/logs/view.js" afterPath="$PROJECT_DIR$/mithril/logs/view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/pages/about/view.js" afterPath="$PROJECT_DIR$/mithril/pages/about/view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/pages/home/view.js" afterPath="$PROJECT_DIR$/mithril/pages/home/view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/wiki/view.js" afterPath="$PROJECT_DIR$/mithril/wiki/view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mithril/comments/view.mustache" afterPath="$PROJECT_DIR$/mithril/comments/view.mustache" />
@@ -47,118 +43,103 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="cm-mvc" />
+    <favorites_list name="cm-mvc">
+      <favorite_root url="file://$PROJECT_DIR$/mithril/bundle.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44997486">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="view.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/header/view.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="7" column="24" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="280">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="view.mustache" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/comments/view.mustache">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="27" selection-start="120" selection-end="120" vertical-scroll-proportion="-2.3076923" vertical-offset="0" max-vertical-offset="900">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="view.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/wiki/view.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="34" column="15" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/app.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="19" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="view.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/comments/view.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="28" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1420">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="controller.js" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mithril/pages/about/controller.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="17" column="23" selection-start="532" selection-end="532" vertical-scroll-proportion="0.27868852" vertical-offset="0" max-vertical-offset="1220">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="24" column="6" selection-start="823" selection-end="823" vertical-scroll-proportion="-18.461538" vertical-offset="0" max-vertical-offset="720">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/comments/controller.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="34" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="viewmodel.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/comments/viewmodel.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="68" column="16" selection-start="2445" selection-end="2445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mithril/header/controller.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="4" selection-start="213" selection-end="276" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="viewmodel.js" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/mithril/wiki/viewmodel.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="29" column="31" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.47540984" vertical-offset="0" max-vertical-offset="1220">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="26" column="17" selection-start="825" selection-end="859" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="700">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gulpfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="960">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/comments/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="26" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewmodel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/header/viewmodel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="23" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1920">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/logs/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="0" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1580">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mithrilify.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mithril/lib/mithrilify.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="29" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.61576355" vertical-offset="0" max-vertical-offset="2680">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewmodel.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/comments/viewmodel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="47" column="23" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1640">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="text.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/header/text.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="118" selection-start="1003" selection-end="1003" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="600">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="view.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/header/view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="960" selection-start="999" selection-end="999" vertical-scroll-proportion="-0.7692308" vertical-offset="0" max-vertical-offset="600">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="controller.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mithril/header/controller.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="9" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -171,14 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/index_theme.html" />
-        <option value="$PROJECT_DIR$/canjs/can.object.js" />
-        <option value="$PROJECT_DIR$/canjs/can_app.json" />
-        <option value="$PROJECT_DIR$/canjs/view/wiki_template.js" />
-        <option value="$PROJECT_DIR$/canjs/view/wiki_template.html" />
-        <option value="$PROJECT_DIR$/canjs/view/wiki_template.mustache" />
-        <option value="$PROJECT_DIR$/canjs/view/log_template.mustache" />
-        <option value="$PROJECT_DIR$/canjs/view/footer.mustache" />
         <option value="$PROJECT_DIR$/theme.html" />
         <option value="$PROJECT_DIR$/canjs/view/log.mustache" />
         <option value="$PROJECT_DIR$/canjs/fixtures.js" />
@@ -201,36 +174,42 @@
         <option value="$PROJECT_DIR$/mithril/logs/logs.js" />
         <option value="$PROJECT_DIR$/mithril/header/header.js" />
         <option value="$PROJECT_DIR$/mithril/text.html" />
-        <option value="$PROJECT_DIR$/js/bootstrap.min.js" />
-        <option value="$PROJECT_DIR$/mithril/logs/controller.js" />
-        <option value="$PROJECT_DIR$/mithril/wiki/viewmodel.js" />
         <option value="$PROJECT_DIR$/mithril/wiki/controller.js" />
-        <option value="$PROJECT_DIR$/mithril/pages/home/view.js" />
-        <option value="$PROJECT_DIR$/mithril/header/view.js" />
-        <option value="$PROJECT_DIR$/mithril/logs/view.js" />
-        <option value="$PROJECT_DIR$/mithril/app.js" />
-        <option value="$PROJECT_DIR$/mithril/pages/home/controller.js" />
         <option value="$PROJECT_DIR$/mithril/pages/about/view.js" />
-        <option value="$PROJECT_DIR$/mithril/header/controller.js" />
-        <option value="$PROJECT_DIR$/mithril/header/viewmodel.js" />
         <option value="$PROJECT_DIR$/mithril/header/template.html" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/mithril/comments/viewmodel.js" />
         <option value="$PROJECT_DIR$/mithril/index.html" />
-        <option value="$PROJECT_DIR$/mithril/comments/controller.js" />
-        <option value="$PROJECT_DIR$/mithril/comments/view.js" />
-        <option value="$PROJECT_DIR$/mithril/comments/view.mustache" />
         <option value="$PROJECT_DIR$/mithril/wiki/view.js" />
+        <option value="$PROJECT_DIR$/mithril/comments/view.js" />
+        <option value="$PROJECT_DIR$/mithril/logs/view.js" />
+        <option value="$PROJECT_DIR$/mithril/comments/view.mustache" />
+        <option value="$PROJECT_DIR$/mithril/app.js" />
         <option value="$PROJECT_DIR$/mithril/pages/about/controller.js" />
+        <option value="$PROJECT_DIR$/mithril/wiki/viewmodel.js" />
+        <option value="$PROJECT_DIR$/mithril/pages/home/controller.js" />
+        <option value="$PROJECT_DIR$/mithril/pages/home/view.js" />
+        <option value="$PROJECT_DIR$/mithril/logs/controller.js" />
+        <option value="$PROJECT_DIR$/mithril/try.html" />
+        <option value="$PROJECT_DIR$/mithril/try2.html" />
+        <option value="$PROJECT_DIR$/mithril/lib/convert.js" />
+        <option value="$PROJECT_DIR$/js/bootstrap.min.js" />
+        <option value="$PROJECT_DIR$/mithril/result/text.html" />
+        <option value="$PROJECT_DIR$/mithril/header/view_old.js" />
+        <option value="$PROJECT_DIR$/mithril/header/view.js" />
+        <option value="$PROJECT_DIR$/mithril/lib/mithrilify.js" />
+        <option value="$PROJECT_DIR$/mithril/header/viewmodel.js" />
+        <option value="$PROJECT_DIR$/mithril/comments/controller.js" />
+        <option value="$PROJECT_DIR$/mithril/comments/viewmodel.js" />
+        <option value="$PROJECT_DIR$/mithril/header/controller.js" />
+        <option value="$PROJECT_DIR$/mithril/header/text.html" />
+        <option value="$PROJECT_DIR$/mithril/gulpfile.js" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="785" />
-    <option name="y" value="22" />
-    <option name="width" value="1775" />
-    <option name="height" value="1330" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -316,7 +295,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -345,45 +323,122 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="mithril" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mithril" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="logs" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mithril" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mithril" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="header" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mithril" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="comments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mithril" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cm-mvc" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canjs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors" />
@@ -447,15 +502,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="785" y="22" width="1775" height="1330" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32805628" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19887324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17430556" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -463,7 +519,6 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884777" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -509,78 +564,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="33" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="792" selection-end="792" vertical-scroll-proportion="0.39076376" vertical-offset="0" max-vertical-offset="1126" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/can.object.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="17" selection-start="3703" selection-end="3703" vertical-scroll-proportion="0.0" vertical-offset="1219" max-vertical-offset="2440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/footer.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="33" selection-end="33" vertical-scroll-proportion="0.025706941" vertical-offset="0" max-vertical-offset="778" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="25" selection-start="640" selection-end="640" vertical-scroll-proportion="0.66838044" vertical-offset="0" max-vertical-offset="2540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/about.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="10" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="2015" selection-end="2015" vertical-scroll-proportion="-20.73077" vertical-offset="541" max-vertical-offset="1380" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/header.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="19" selection-start="0" selection-end="1047" vertical-scroll-proportion="-17.692308" vertical-offset="0" max-vertical-offset="760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/wiki.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="0" selection-end="1127" vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="640" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/comments.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="21" selection-start="0" selection-end="1157" vertical-scroll-proportion="-10.769231" vertical-offset="0" max-vertical-offset="760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/fixtures.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="43" selection-start="3282" selection-end="3282" vertical-scroll-proportion="0.5201342" vertical-offset="0" max-vertical-offset="2260" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="202" selection-end="381" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="420" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/canjs/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="272" column="19" selection-start="8419" selection-end="8456" vertical-scroll-proportion="-9.5" vertical-offset="5193" max-vertical-offset="6500">
@@ -595,9 +578,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/knockout/modules/logs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
+        <state line="26" column="20" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mithril/lib/knockout.js">
@@ -638,25 +619,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="34" selection-start="265" selection-end="265" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/knockout/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="0" selection-start="687" selection-end="2099" vertical-scroll-proportion="0.077608146" vertical-offset="299" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="27260">
           <folding />
         </state>
       </provider>
@@ -668,13 +633,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/logs/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="22" selection-start="902" selection-end="902" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="320">
@@ -682,46 +640,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/pages/home/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mithril/pages/about/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="23" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/pages/home/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="288" selection-end="353" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/header/template.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="1132" selection-end="1132" vertical-scroll-proportion="-16.153847" vertical-offset="0" max-vertical-offset="640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/wiki/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="781" selection-end="781" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/header/viewmodel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="31" selection-start="1626" selection-end="1626" vertical-scroll-proportion="0.0" vertical-offset="535" max-vertical-offset="1900">
-          <folding />
-        </state>
+        <state line="10" column="23" selection-start="210" selection-end="210" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="320" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mithril/index2.html">
@@ -738,100 +659,255 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/logs/controller.js">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="1" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="1500">
-          <folding />
-        </state>
+        <state line="52" column="1" selection-start="686" selection-end="687" vertical-scroll-proportion="-0.4760746" vertical-offset="1627" max-vertical-offset="2860" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/comments.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="24" selection-start="657" selection-end="657" vertical-scroll-proportion="0.3811102" vertical-offset="0" max-vertical-offset="1207">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="1" selection-start="686" selection-end="687" vertical-scroll-proportion="-0.4760746" vertical-offset="1627" max-vertical-offset="2860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/comments/viewmodel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="16" selection-start="2445" selection-end="2445" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/header/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="4" selection-start="213" selection-end="276" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="640">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/header/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="24" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="280">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/comments/view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="28" selection-start="1186" selection-end="1186" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/comments/view.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="27" selection-start="120" selection-end="120" vertical-scroll-proportion="-2.3076923" vertical-offset="0" max-vertical-offset="900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/comments/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="34" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1380">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="6" selection-start="823" selection-end="823" vertical-scroll-proportion="-18.461538" vertical-offset="0" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/wiki/viewmodel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="31" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.47540984" vertical-offset="0" max-vertical-offset="1220">
+        <state line="23" column="24" selection-start="657" selection-end="657" vertical-scroll-proportion="0.21832883" vertical-offset="298" max-vertical-offset="1040">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mithril/wiki/view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="15" selection-start="1535" selection-end="1535" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="800">
+        <state line="34" column="22" selection-start="1538" selection-end="1538" vertical-scroll-proportion="0.5676127" vertical-offset="0" max-vertical-offset="1198">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="1" selection-start="389" selection-end="389" vertical-scroll-proportion="-11.538462" vertical-offset="0" max-vertical-offset="420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/pages/about/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="23" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/wiki/viewmodel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="31" selection-start="1138" selection-end="1138" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="760">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/pages/home/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="22" selection-start="505" selection-end="505" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="560">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/lib/mustache.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="11680">
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/comments/view.mustache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="41" selection-start="924" selection-end="924" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="900">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/pages/home/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="22" selection-start="554" selection-end="554" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/comments/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="18" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1420">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/header/template.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="6" selection-start="1290" selection-end="1290" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/node_modules/jsdom/lib/jsdom/browser/documentfeatures.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="9" selection-start="104" selection-end="105" vertical-scroll-proportion="0.075093865" vertical-offset="0" max-vertical-offset="1160">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/node_modules/jsdom/lib/jsdom/browser/htmltodom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="30" selection-start="1851" selection-end="1852" vertical-scroll-proportion="-10.230769" vertical-offset="934" max-vertical-offset="4000">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/node_modules/jsdom/lib/jsdom/living/core.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/node_modules/jsdom/lib/jsdom/living/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/node_modules/jsdom/lib/jsdom/living/node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="130" column="68" selection-start="3548" selection-end="3556" vertical-scroll-proportion="0.33291614" vertical-offset="2334" max-vertical-offset="3740">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/node_modules/jsdom/lib/jsdom.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="264" column="19" selection-start="7646" selection-end="7646" vertical-scroll-proportion="-14.846154" vertical-offset="4894" max-vertical-offset="7660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/lib/convert.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="444" selection-end="887" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/header/view_old.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="300">
+          <folding>
+            <marker date="1405531420000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1405531420000" expanded="true" signature="-1:-1" placeholder="[...]" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mithril/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="19" selection-start="248" selection-end="248" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="480">
+        <state line="13" column="0" selection-start="275" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/pages/about/controller.js">
+    <entry file="file://$PROJECT_DIR$/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="532" selection-end="532" vertical-scroll-proportion="0.27868852" vertical-offset="0" max-vertical-offset="1220">
+        <state line="8" column="15" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="200">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/wiki/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="0" selection-start="44" selection-end="44" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/logs/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="49" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/logs/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="0" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1580">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/header/viewmodel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="23" selection-start="69" selection-end="69" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1920">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/comments/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="26" selection-start="143" selection-end="143" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2040">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/build/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="69240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="69240">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="17" selection-start="825" selection-end="859" vertical-scroll-proportion="-20.0" vertical-offset="0" max-vertical-offset="700">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/comments/viewmodel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="23" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1640">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/header/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="9" selection-start="635" selection-end="635" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="620">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/header/text.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="118" selection-start="1003" selection-end="1003" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/header/view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="960" selection-start="999" selection-end="999" vertical-scroll-proportion="-0.7692308" vertical-offset="0" max-vertical-offset="600">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="960">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mithril/lib/mithrilify.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="29" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.61576355" vertical-offset="0" max-vertical-offset="2680">
           <folding />
         </state>
       </provider>

@@ -1,4 +1,5 @@
 // Using knockout viewmodel and knockout html
+var $ = require('../../js/jquery');
 
 var AppViewModel = function (){
 

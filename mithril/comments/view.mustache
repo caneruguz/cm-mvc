@@ -1,10 +1,10 @@
 <div id="cm-comment" class="col-xs-12">
     <div class="row">
         <div class="col-xs-8">
-            <h4>Comments ==</h4>
+            <h4>Comments </h4>
         </div>
         <div class="col-xs-4">
-            <input type="text" class="form-control input-sm" placeholder="filter">
+            <input id="filterText" type="text" class="form-control input-sm" placeholder="filter">
         </div>
 
     </div>
@@ -12,17 +12,17 @@
     <div id="cm-boxWrapper">
         <div class="row">
             <div class="col-xs-9">
-                <textarea class="cm-box"></textarea>
-            </div>
+                <textarea id="commentText" class="cm-box"></textarea>
+        </div>
             <div class="col-xs-3">
-                <button class="btn btn-default btn-block btn-lg"> Add This </button>
+                <button id="addComment" class="btn btn-default btn-block btn-lg"> Add </button>
             </div>
         </div>
         <div class="row">
             <div id="cm-commentList" class="col-xs-12">
                 <table class="table table-condensed">
-                    {{#comments}}
-                    <tr>
+                    {{#list}}
+                    <tr class="{{show}}">
                         <td>
                             <b>{{username}} </b>
                         </td>
@@ -31,7 +31,7 @@
                             <span class="text-muted">{{date}} </span>
                         </td>
                     </tr>
-                    {{/comments}}
+                    {{/list}}
                 </table>
             </div>
         </div>

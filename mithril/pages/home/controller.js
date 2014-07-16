@@ -1,11 +1,7 @@
 var header = require('../../header/view');
-global.window.header = header;
-
 var comments  = require('../../comments/view');
 var wiki = require('../../wiki/view');
-
-var logs = require('../../logs/view');
-global.window.logs = logs;
+var log = require('../../logs/view');
 
 // Home page
 var home = {};
@@ -16,7 +12,7 @@ home.controller = function(){
     m.module(document.getElementById("header"), header);
 
     this.wikiControl = new wiki.controller();
-    this.logsControl = new logs.controller();
+    this.logsControl = new log.controller();
     this.commentsControl = new comments.controller();
 }
 console.log(comments, wiki, home)

@@ -1,7 +1,4 @@
 var header = require('../../header/view');
-global.window.header = header;
-var logs = require('../../logs/view');
-global.window.log = logs;
 
 // Simple About page, uses the page components as templates.
 var about = {};
