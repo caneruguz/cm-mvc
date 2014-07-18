@@ -8,13 +8,13 @@ var paths;
 
 paths = {
     jsfiles: ['./comments/*.js', './header/*.js','./wiki/*.js', './logs/*.js', './pages/*.js'],
-    htmlfile : './header/text.html'
+    htmlfile : ['./header/template.html','./lib/mithrilify.js']
 };
 
 
 gulp.task('mithrilify', function() {
     // gulp.src -- get html template
-    return gulp.src("./header/text.html")
+    return gulp.src("./header/template.html")
         // pipe through plugin
         .pipe(mithrilify("postRender"))
         //Rename file as view.js

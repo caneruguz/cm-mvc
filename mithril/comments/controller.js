@@ -11,18 +11,6 @@ var $ = require('../../js/jquery');
         // Declare and empty setter for content of the comment to bind it to the form.
         this.content = m.prop("");
 
-        // add comment Mithril way
-//        this.add = function () {
-//            if(this.content()){
-//                // New comment
-//                comments.List().push(new comments.comment(this.content()));
-//                // Log this behavior by adding a new Log model
-//                logs.List().push(new logs.singleLog("comment", this.content()));
-//                // Reset the form for new comments.
-//                this.content("");
-//            }
-//        }.bind(this);
-
         // Add Comment with jquery and mustache
         $(document).on('click', '#addComment', function(){
             var commentText = $('#commentText').val();
@@ -38,7 +26,7 @@ var $ = require('../../js/jquery');
             self.filterText(text);
             self.filter();
 //            m.redraw()
-  //          console.log(text);
+//          console.log(text);
         })
 
 

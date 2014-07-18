@@ -27,26 +27,31 @@ function mithrilify(postRender) {
 
         var templateConverter = {};
         templateConverter.DOMFragment = function(markup) {
-            if (markup.indexOf("<!doctype") > -1) return [new DOMParser().parseFromString(markup, "text/html").childNodes[1]]
+            if (markup.indexOf("<!doctype") > -1) return [ $(window).html(markup).children()]
             //var container = window.document.createElement("div");
             //container.insertAdjacentHTML("beforeend", markup);
-            $("div").html(markup);
-            //console.log($("div").children());
-            return $("div").children();
+            var newDiv = $("div");
+            newDiv.html(markup);
+            console.log(newDiv.children().length);
+
+            return newDiv.children();
         }
         templateConverter.VirtualFragment = function recurse(domFragment) {
             var virtualFragment = [];
+            //console.log("===");
 
-                domFragment.each(function(){
-                    if(this.type == "text"){
-                        virtualFragment.push(this.data);
-                    } else {
-                        var attrs = this.attribs;
-                        virtualFragment.push({tag: this.name.toLowerCase(), attrs: attrs, children: recurse($(this).children())});
-
+            domFragment.each(function(){
+                   // console.log(this.name);
+                    if(this.prev){
+                        if(this.prev.type == "text"){
+                            //console.log("THIS WAS TEXT");
+                            virtualFragment.push(this.prev.data);
+                        }
                     }
+                    var attrs = this.attribs;
+                    virtualFragment.push({tag: this.name.toLowerCase(), attrs: attrs, children: recurse($(this).children())});
                 })
-
+            //console.log(virtualFragment, "=========================================");
             return virtualFragment;
         }
         templateConverter.Template = function recurse() {
@@ -56,7 +61,6 @@ function mithrilify(postRender) {
 
             var virtualFragment = arguments[0], level = arguments[1]
             if (!level) level = 1;
-
             var tab = "\n" + new Array(level + 1).join("\t");
             var virtuals = [];
             for (var i = 0, el; el = virtualFragment[i]; i++) {
