@@ -2,14 +2,52 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="656610ed-85ca-46fa-9035-6e6bc1ab3419" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knockout/modules/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knockout/modules/comments.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knockout/modules/logs.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/knockout/modules/wiki.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canjs/index.html" afterPath="$PROJECT_DIR$/canjs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/knockout/index.html" afterPath="$PROJECT_DIR$/knockout/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wiki.json" afterPath="$PROJECT_DIR$/wiki.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/grid.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/less/style.less" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/can.fixture.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/can.jquery.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/can.object.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/fixtures.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/about.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/comments.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/footer.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/header.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/log.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/wiki.mustache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/comments.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.css.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/index_theme.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/knockout-3.1.0.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/comments.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/logs.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/wiki.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/logs.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/data2.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/mithril.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vuejs/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vuejs/vue.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wiki.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cm-mvc.iws" />
@@ -33,55 +71,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="gulpfile.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gulpfile.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="25" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1100">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/less/style.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="20" selection-start="714" selection-end="714" vertical-scroll-proportion="-14.0" vertical-offset="326" max-vertical-offset="1180">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/canjs/index.html">
+        <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="272" column="19" selection-start="8419" selection-end="8456" vertical-scroll-proportion="-3.5285714" vertical-offset="5193" max-vertical-offset="6500">
+            <state line="21" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1000">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/knockout/index.html">
+      <file leaf-file-name="grid.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/grid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="36" selection-start="6884" selection-end="6884" vertical-scroll-proportion="0.6894665" vertical-offset="2256" max-vertical-offset="3420">
+            <state line="130" column="71" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.32019705" vertical-offset="2340" max-vertical-offset="5480">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knockout/modules/app.js">
+      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="10" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+            <state line="164" column="42" selection-start="18745" selection-end="18745" vertical-scroll-proportion="0.0" vertical-offset="2388" max-vertical-offset="3820">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wiki.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knockout/modules/wiki.js">
+      <file leaf-file-name="sample.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dist/sample.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="logs.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knockout/modules/logs.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="20" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="comments.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/knockout/modules/comments.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="37" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="940">
+            <state line="0" column="895" selection-start="895" selection-end="895" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="120">
               <folding />
             </state>
           </provider>
@@ -141,6 +179,14 @@
         <option value="$PROJECT_DIR$/knockout/modules/wiki.js" />
         <option value="$PROJECT_DIR$/knockout/modules/logs.js" />
         <option value="$PROJECT_DIR$/knockout/modules/comments.js" />
+        <option value="$PROJECT_DIR$/node_modules/gulp-minify-css/index.js" />
+        <option value="$PROJECT_DIR$/sample.json" />
+        <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/node_modules/jsontree-generator/index.js" />
+        <option value="$PROJECT_DIR$/dist/sample.json" />
+        <option value="$PROJECT_DIR$/less/style.less" />
+        <option value="$PROJECT_DIR$/scripts/grid.js" />
       </list>
     </option>
   </component>
@@ -225,7 +271,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mithril" />
+              <option name="myItemId" value="scripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,7 +285,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="knockout" />
+              <option name="myItemId" value="less" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -253,39 +299,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="knockout" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canjs" />
+              <option name="myItemId" value="dist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -300,6 +314,10 @@
     <property name="LayoutCode.rearrangeEntriesHTML" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/dist" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/canjs" />
       <recent name="$PROJECT_DIR$" />
@@ -357,7 +375,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33680555" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -365,11 +383,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32884777" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -387,9 +405,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11736111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -410,320 +428,190 @@
       <option name="time" value="1" />
     </breakpoint-manager>
   </component>
+  <component name="XPathView.XPathProjectComponent">
+    <history />
+    <find-history />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/index_theme.html">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="420">
+        <state line="17" column="25" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1100">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wiki.json">
+    <entry file="file://$PROJECT_DIR$/less/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="40" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="180">
+        <state line="18" column="8" selection-start="187" selection-end="187" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="940">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="20" selection-start="857" selection-end="857" vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1760">
+        <state line="21" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1000">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
+    <entry file="file://$PROJECT_DIR$/scripts/grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="320" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="14" selection-start="1140" selection-end="1140" vertical-scroll-proportion="0.0" vertical-offset="580" max-vertical-offset="1060" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="29" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1040">
+        <state line="18" column="30" selection-start="522" selection-end="522" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="3360">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index.html">
+    <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="42" selection-start="1725" selection-end="1725" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="7340">
+        <state line="165" column="30" selection-start="18746" selection-end="18746" vertical-scroll-proportion="0.0" vertical-offset="2646" max-vertical-offset="3800">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/mithril.js">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="328" column="66" selection-start="12778" selection-end="12782" vertical-scroll-proportion="0.0" vertical-offset="5965" max-vertical-offset="12560" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index_theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="36" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="420">
+        <state line="26" column="0" selection-start="847" selection-end="847" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1060">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wiki.json">
+    <entry file="file://$PROJECT_DIR$/less/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="40" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="180">
+        <state line="24" column="0" selection-start="296" selection-end="296" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="600">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-minify-css/node_modules/clean-css/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="20" selection-start="857" selection-end="857" vertical-scroll-proportion="0.0" vertical-offset="696" max-vertical-offset="1760">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1600" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-minify-css/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="13" selection-start="628" selection-end="628" vertical-scroll-proportion="0.0" vertical-offset="647" max-vertical-offset="1420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-minify-css/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="32" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="2020">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
+    <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="320" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comments.json">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="29" selection-start="775" selection-end="775" vertical-scroll-proportion="0.0" vertical-offset="560" max-vertical-offset="1040">
+        <state line="55" column="25" selection-start="2025" selection-end="2025" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="1660">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index.html">
+    <entry file="file://$PROJECT_DIR$/scripts/grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="224" column="13" selection-start="6993" selection-end="6993" vertical-scroll-proportion="0.0" vertical-offset="4480" max-vertical-offset="6900">
+        <state line="14" column="5" selection-start="232" selection-end="232" vertical-scroll-proportion="0.0" vertical-offset="280" max-vertical-offset="400">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/mithril.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="328" column="66" selection-start="12778" selection-end="12782" vertical-scroll-proportion="0.0" vertical-offset="5965" max-vertical-offset="12560" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index_theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="36" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.0" vertical-offset="1795" max-vertical-offset="2920" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="1" selection-start="334" selection-end="334" vertical-scroll-proportion="0.0" vertical-offset="260" max-vertical-offset="380">
+        <state line="12" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="800">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wiki.json">
+    <entry file="file://$PROJECT_DIR$/dist/bundle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="40" selection-start="42" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="20" max-vertical-offset="180">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="27660" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="13" selection-start="336" selection-end="336" vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="800">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/less/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="16" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1280">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sample.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1233" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="64" selection-end="315" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-minify-css/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="13" selection-start="628" selection-end="628" vertical-scroll-proportion="0.28748965" vertical-offset="213" max-vertical-offset="1420" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-minify-css/node_modules/clean-css/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1600" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-minify-css/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="32" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0" vertical-offset="220" max-vertical-offset="2020">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/index.html">
+    <entry file="file://$PROJECT_DIR$/bower.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="0" selection-start="1298" selection-end="1298" vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="2720" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="31" selection-start="1294" selection-end="1294" vertical-scroll-proportion="0.0" vertical-offset="520" max-vertical-offset="1440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="33" selection-start="90" selection-end="90" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="840" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="23" selection-start="409" selection-end="409" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="760" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/data2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="15" selection-start="17" selection-end="17" vertical-scroll-proportion="0.01780944" vertical-offset="0" max-vertical-offset="1123" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vuejs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="792" selection-end="792" vertical-scroll-proportion="0.39076376" vertical-offset="0" max-vertical-offset="1126" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/can.object.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="99" column="17" selection-start="3703" selection-end="3703" vertical-scroll-proportion="0.0" vertical-offset="1219" max-vertical-offset="2440" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/footer.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="26" selection-start="33" selection-end="33" vertical-scroll-proportion="0.025706941" vertical-offset="0" max-vertical-offset="778" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/mithril.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="33" selection-start="5898" selection-end="5898" vertical-scroll-proportion="0.4362416" vertical-offset="2140" max-vertical-offset="12560" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="25" selection-start="640" selection-end="640" vertical-scroll-proportion="0.66838044" vertical-offset="0" max-vertical-offset="2540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index_theme.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="29" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.44444445" vertical-offset="140" max-vertical-offset="2920" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mithril/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="348" column="43" selection-start="12259" selection-end="12267" vertical-scroll-proportion="0.0" vertical-offset="6714" max-vertical-offset="8960">
+        <state line="17" column="25" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1100">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/about.mustache">
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="10" selection-start="2762" selection-end="2762" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="2015" selection-end="2015" vertical-scroll-proportion="-20.73077" vertical-offset="541" max-vertical-offset="1380">
+        <state line="21" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1000">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/header.mustache">
+    <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="19" selection-start="0" selection-end="1047" vertical-scroll-proportion="-17.692308" vertical-offset="0" max-vertical-offset="760">
+        <state line="164" column="42" selection-start="18745" selection-end="18745" vertical-scroll-proportion="0.0" vertical-offset="2388" max-vertical-offset="3820">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/wiki.mustache">
+    <entry file="file://$PROJECT_DIR$/dist/sample.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="25" selection-start="0" selection-end="1127" vertical-scroll-proportion="-9.230769" vertical-offset="0" max-vertical-offset="640">
+        <state line="0" column="895" selection-start="895" selection-end="895" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1300">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/comments.mustache">
+    <entry file="file://$PROJECT_DIR$/less/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="21" selection-start="0" selection-end="1157" vertical-scroll-proportion="-10.769231" vertical-offset="0" max-vertical-offset="760">
+        <state line="52" column="20" selection-start="714" selection-end="714" vertical-scroll-proportion="-14.0" vertical-offset="326" max-vertical-offset="1180">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/fixtures.js">
+    <entry file="file://$PROJECT_DIR$/scripts/grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="43" selection-start="3282" selection-end="3282" vertical-scroll-proportion="0.5201342" vertical-offset="0" max-vertical-offset="2260">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/wiki.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="1" selection-start="1286" selection-end="1286" vertical-scroll-proportion="-3.0769231" vertical-offset="0" max-vertical-offset="200">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="202" selection-end="381" vertical-scroll-proportion="-6.923077" vertical-offset="0" max-vertical-offset="420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="209" selection-end="209" vertical-scroll-proportion="-7.6923075" vertical-offset="0" max-vertical-offset="320">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comments.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="234" selection-end="440" vertical-scroll-proportion="-7.6923075" vertical-offset="0" max-vertical-offset="1040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="272" column="19" selection-start="8419" selection-end="8456" vertical-scroll-proportion="-3.5285714" vertical-offset="5193" max-vertical-offset="6500">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="1" selection-start="349" selection-end="349" vertical-scroll-proportion="-17.692308" vertical-offset="0" max-vertical-offset="2860">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/canjs/view/log.mustache">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="8" selection-start="0" selection-end="290" vertical-scroll-proportion="0.17923824" vertical-offset="0" max-vertical-offset="1339">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knockout/modules/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="10" selection-start="414" selection-end="414" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knockout/modules/wiki.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="988" selection-end="988" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knockout/modules/logs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="20" selection-start="915" selection-end="915" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knockout/modules/comments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="37" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="940">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/knockout/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="36" selection-start="6884" selection-end="6884" vertical-scroll-proportion="0.6894665" vertical-offset="2256" max-vertical-offset="3420">
+        <state line="130" column="71" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.32019705" vertical-offset="2340" max-vertical-offset="5480">
           <folding />
         </state>
       </provider>
