@@ -2,52 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="656610ed-85ca-46fa-9035-6e6bc1ab3419" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/scripts/grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sample.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/less/style.less" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/can.fixture.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/can.jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/can.object.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/fixtures.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/about.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/comments.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/footer.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/header.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/log.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/canjs/view/wiki.mustache" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/comments.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/css/style.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/fonts/glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/index_theme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/knockout-3.1.0.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/comments.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/logs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/knockout/modules/wiki.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/logs.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/data2.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/mithril/mithril.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuejs/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/vuejs/vue.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wiki.json" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bundle.css" afterPath="$PROJECT_DIR$/dist/bundle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bundle.js" afterPath="$PROJECT_DIR$/dist/bundle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/grid.js" afterPath="$PROJECT_DIR$/scripts/grid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/style.css" afterPath="$PROJECT_DIR$/less/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/style.less" afterPath="$PROJECT_DIR$/less/style.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cm-mvc.iws" />
@@ -74,7 +33,7 @@
       <file leaf-file-name="gulpfile.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="25" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1100">
+            <state line="14" column="36" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1100">
               <folding />
             </state>
           </provider>
@@ -83,7 +42,7 @@
       <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/less/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="20" selection-start="714" selection-end="714" vertical-scroll-proportion="-14.0" vertical-offset="326" max-vertical-offset="1180">
+            <state line="51" column="12" selection-start="693" selection-end="693" vertical-scroll-proportion="-12.039216" vertical-offset="406" max-vertical-offset="1240">
               <folding />
             </state>
           </provider>
@@ -92,7 +51,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1000">
+            <state line="21" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="-16.153847" vertical-offset="0" max-vertical-offset="1000">
               <folding />
             </state>
           </provider>
@@ -101,7 +60,7 @@
       <file leaf-file-name="grid.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/grid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="130" column="71" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.32019705" vertical-offset="2340" max-vertical-offset="5480">
+            <state line="165" column="53" selection-start="6215" selection-end="6215" vertical-scroll-proportion="0.39408866" vertical-offset="2980" max-vertical-offset="5400">
               <folding />
             </state>
           </provider>
@@ -574,20 +533,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="25" selection-start="666" selection-end="666" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1100">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1000">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="164" column="42" selection-start="18745" selection-end="18745" vertical-scroll-proportion="0.0" vertical-offset="2388" max-vertical-offset="3820">
@@ -602,16 +547,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="943" selection-end="943" vertical-scroll-proportion="-16.153847" vertical-offset="0" max-vertical-offset="1000">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="36" selection-start="577" selection-end="577" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1100">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/less/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="20" selection-start="714" selection-end="714" vertical-scroll-proportion="-14.0" vertical-offset="326" max-vertical-offset="1180">
+        <state line="51" column="12" selection-start="693" selection-end="693" vertical-scroll-proportion="-12.039216" vertical-offset="406" max-vertical-offset="1240">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="130" column="71" selection-start="4595" selection-end="4595" vertical-scroll-proportion="0.32019705" vertical-offset="2340" max-vertical-offset="5480">
+        <state line="165" column="53" selection-start="6215" selection-end="6215" vertical-scroll-proportion="0.39408866" vertical-offset="2980" max-vertical-offset="5400">
           <folding />
         </state>
       </provider>

@@ -39,3 +39,6 @@ tr {
 .form-comp {
   margin: 0 25px;
 }
+input {
+  width: 50px !important;
+}

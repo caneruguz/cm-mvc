@@ -178,24 +178,20 @@ var grid = {};
         return [ m("div.row", [
                   m("div.col-sm-12", [
                       m("div.row", [
-                          m("div.col-sm-5.form-inline",
-                              [ m("div.form-group", [
+                          m("div.col-sm-5",[
+                                m("span", "From: "),
                                 m("input.form-control", {onchange: m.withAttr("value", ctrl.fromid), value: ctrl.fromid()}),
-                                m("input.form-control.col-sm-2", {onchange: m.withAttr("value", ctrl.toid), value: ctrl.toid()}),
+                                m("span", "To: "),
+                                m("input.form-control", {onchange: m.withAttr("value", ctrl.toid), value: ctrl.toid()}),
                                 m("button.btn.btn-info", { onclick:  ctrl.pull},  "Move")
-                              ])
                           ]),
-                          m("div.col-sm-4.form-inline",[
-                              m("div.form-group", [
+                          m("div.col-sm-4",[
                                   m("input.form-control ", {onchange: m.withAttr("value", ctrl.todelete), value: ctrl.todelete()}),
                                   m("button.btn.btn-danger", { onclick:  ctrl.delete},  "Delete")
-                              ])
-                          ]),
-                          m("div.col-sm-3.form-inline",[
-                              m("div.form-group", [
+                            ]),
+                          m("div.col-sm-3",[
                                 m("input.form-control", {onchange: m.withAttr("value", ctrl.toadd), value: ctrl.toadd()}),
                                  m("button.btn.btn-success", { onclick:  ctrl.add},  "Add")
-                              ])
                           ])
                       ])
                       ])
