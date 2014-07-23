@@ -3,22 +3,34 @@ var concat = require("gulp-concat")
 var minifyCSS = require('gulp-minify-css');
 var less = require('gulp-less');
 var generate = require('jsontree-generator');
+var rename = require('gulp-rename');
 
 var paths = {
     cssfiles : ["./bower_components/bootstrap/dist/css/*.min.css", "./less/*.css"],
-    jsfiles : [ "./bower_components/jquery/dist/*.min.js", "./bower_components/bootstrap/dist/js/*.min.js", "./node_modules/mithril/*.min.js", "./scripts/*.js"],
+    jsfiles : [ "./bower_components/jquery/dist/*.min.js", "./bower_components/jquery-ui/*.min.js", "./bower_components/bootstrap/dist/js/*.min.js", "./node_modules/mithril/*.min.js", "./scripts/*.js"],
     json : "./sample.json",
     less : "./less/*.less"
 }
 
-gulp.task('generate', function() {
+gulp.task('generate-max', function() {
     // gulp.src -- get html template
     return gulp.src(paths.json)
         // pipe through plugin
-        .pipe(generate())
+        .pipe(generate(5))
         // set destination
         .pipe(gulp.dest("./dist"))
 });
+
+gulp.task('generate-min', function() {
+    // gulp.src -- get html template
+    return gulp.src(paths.json)
+        // pipe through plugin
+        .pipe(generate(2))
+        .pipe(rename("small.json"))
+        // set destination
+        .pipe(gulp.dest("./dist"))
+});
+
 
 gulp.task("less", function(){
     gulp.src(paths.less)
@@ -47,4 +59,4 @@ gulp.task('watch', function() {
 });
 
 
-gulp.task("default", ["css", "js", "generate", "watch"]);
+gulp.task("default", ["css", "js", "generate-max", "generate-min", "watch"]);

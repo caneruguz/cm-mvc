@@ -1386,3 +1386,4 @@ tr{padding-left:10px}
 .gridWrapper{height:500px;overflow-y:scroll;overflow-x:hidden;border:1px solid #ccc;margin-top:50px;padding:25px}
 .form-comp{margin:0 25px}
 input{width:50px!important}
+.highlight{background-color:rgba(255,255,0,.53)}
