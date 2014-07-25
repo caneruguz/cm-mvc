@@ -16,7 +16,7 @@ gulp.task('generate-max', function() {
     // gulp.src -- get html template
     return gulp.src(paths.json)
         // pipe through plugin
-        .pipe(generate(5))
+        .pipe(generate(50000, 30))
         // set destination
         .pipe(gulp.dest("./dist"))
 });
@@ -25,7 +25,7 @@ gulp.task('generate-min', function() {
     // gulp.src -- get html template
     return gulp.src(paths.json)
         // pipe through plugin
-        .pipe(generate(2))
+        .pipe(generate(100, 5))
         .pipe(rename("small.json"))
         // set destination
         .pipe(gulp.dest("./dist"))

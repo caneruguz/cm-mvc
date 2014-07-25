@@ -32,119 +32,122 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
 //# sourceMappingURL=mithril.min.map
 
     // Initialize the module
-    var grid = function(options){
-        var top = this;
-        this.options = options;
-        // Set default option properties if not given by the
-        if(!top.options.hasOwnProperty("placement")){ top.options.placement= "grid" }
-        if(!top.options.hasOwnProperty("sourceURL")){ top.options.sourceURL = "sample.json" }
-        if(!top.options.hasOwnProperty("sort")){ top.options.sort = true }
+    var grid = {};
 
-        // Set property for data and get the data
-        top.data = m.prop({});
-        m.request({method: "GET", url: top.options.sourceURL}).then(top.data).then(function(){console.log(top.data())});
+    // Set property for data and get the data
+    grid.data = m.prop({});
+    m.request({method: "GET", url: "sample_20.json"}).then(grid.data);
 
-        // For adding new models, this should be externally handled.
-        top.model = function (level){
-            this.level = level;
-            this.id = Math.floor(Math.random()*(1000000));
-            this.name  = "JohnnyB. Goode";
-            this.title  =  "Around the World in 80 Days";
-            this.date = new Date;
-            this.children = [];
+    grid.model = function (level){
+        return {
+            level :  level,
+            id : Math.floor(Math.random()*(1000000000000)),
+            load : true,
+            status : true,
+            show : true,
+            loadUrl : "small.json",
+            name  : "JohnnyB. Goode",
+            title  :  "Around the World in 80 Days",
+            date : new Date,
+            filtered : false,
+            children : []
+        }
+    }
+
+    grid.controller = function () {
+        var self = this;
+        this.data = grid.data;
+        this.temp = {}; // temporary object
+        this.filterText = m.prop("");
+        this.flatData = m.prop([]);
+        this.totalItems = m.prop(0);
+
+        this.add = function(addid){ self.traverse("add", addid)};
+        this.delete = function(deleteid){ self.traverse("delete", deleteid)};
+        this.toggle = function(toggleid){ self.traverse("toggle", toggleid)};
+        this.expand = function(){ self.traverse("expand")};
+        this.collapse = function(){ self.traverse("collapse")};
+
+        // One traverse function to rule them all
+        this.traverse = function (action, id, id2){
+            var recursive = function redo(data){
+                var data = data || self.data();
+                data.map( function(item, index, array){
+                    if (item.id == id){
+                        // if item is found do things
+                        switch(action){
+                            case "pull":
+                                array.splice(index, 1);
+                                self.temp = item;
+                                self.traverse("push",id2);
+                                m.redraw();
+                                break;
+                            case "push":
+                                self.temp.level = item.level+1;
+                                item.children.push(self.temp);
+                                break;
+                            case "delete":
+                                array.splice(index, 1);
+                                break;
+                            case "add" :
+                                var level = item.level+1;
+                                var newItem = new grid.model(level);
+                                item.children.push(newItem);
+                                self.traverse("load", newItem.id);
+                                break;
+                            case "toggle":
+                                // if item.load is true
+                                item.status = !item.status;
+                                break;
+                            case "load":
+                                // if item load is true
+                                if (item.load){
+                                    var children = m.prop([]);
+                                    m.request({method: "GET", url: item.loadUrl}).then(children).then(function(){
+                                        children().map(function(child){
+                                              item.children.push(child);
+                                            });
+                                        console.log(item);
+                                        self.adjustLevels(item, self.totalItems());
+                                        m.redraw();
+                                        })
+                                }
+                                break;
+                            case "levels":
+                                self.adjustLevels(item);
+                                break;
+                        }
+                    } else {
+                        // if item isn't found keep looking
+                        if(item.children.length > 0){
+                            redo(item.children);
+                        }
+                    }
+                    if(action == "collapse"){
+                        item.status = false;
+                    }
+                    if(action == "expand"){
+                        item.status = true;
+                    }
+                })
+
+            }
+            recursive(self.data());
         }
 
-        top.controller = function () {
-            var self = this;
-            this.data = grid.data;
-            this.todelete = m.prop(0);
-            this.toadd = m.prop(0);
-            this.temp = {}; // temporary object
+        this.adjustLevels = function redo (container, baseID){
+            var topLevel = container.level;
+            var iterid = 0;
+            container.children.map(function(item, index, array){
+                item.level = topLevel + 1;
+                item.id = baseID+1+iterid;
+                redo(item, item.id);
+                iterid++;
+            })
+        }
 
-            this.add = function(){ self.traverse("add", self.toadd()); };
-            this.delete = function(){ self.traverse("delete", self.todelete())};
-            this.toggle = function(toggleid){ console.log(toggleid);  self.traverse("toggle", toggleid)};
-
-            this.move = function(from, to){
-                console.log(from, to);
-                var inner = this;
-                var temp = {};
-                inner.pull = function redo(data){
-                    data.map(function(item, index, array){
-                        if (item.id == from){
-                            console.log("Found from", item.id);
-                            array.splice(index, 1);
-                            temp = item;
-                            inner.push(self.data());
-                        } else {
-                            if(item.children.length > 0){
-                                redo(item.children);
-                            }
-                        }
-
-                    })
-                }
-
-                inner.push = function redo(data){
-                    data.map(function(item, index, array){
-                        if (item.id == to){
-                            console.log("Found to", item.id);
-                            temp.level = item.level+1;
-                            item.children.push(temp);
-                            m.redraw();
-                        } else {
-                            if(item.children.length > 0){
-                                redo(item.children);
-                            }
-                        }
-                    })
-                }
-                inner.pull(self.data());
-            };
-
-
-            this.traverse = function (action, id){
-                var recursive = function redo(data){
-                    var data = data || self.data();
-                    data.map( function(item, index, array){
-                        if (item.id == id){
-                            // if item is found do things
-                            switch(action){
-                                case "pull":
-                                    array.splice(index, 1);
-                                    self.temp = item;
-                                    self.traverse("push",self.toid());
-                                    console.log("push", self.toid());
-                                    break;
-                                case "push":
-                                    self.temp.level = item.level+1;
-                                    item.children.push(self.temp);
-                                    console.log(item.children);
-                                    break;
-                                case "delete":
-                                    array.splice(index, 1);
-                                    break;
-                                case "add" :
-                                    var level = item.level+1;
-                                    item.children.push(new grid.model(level));
-                                    break;
-                                case "toggle":
-                                    item.status = !item.status;
-                                    break;
-                            }
-                        } else {
-                            // if item isn't found keep looking
-                            if(item.children.length > 0){
-                                redo(item.children);
-                            }
-                        }
-                    })
-
-                }
-                recursive(self.data());
-            }
-
-            this.titleASC = function (a, b) {
+        this.order = function (type){
+            var titleASC = function (a, b) {
                 var titleA = a.title.toLowerCase().replace(/\s+/g, " ");
                 var titleB = b.title.toLowerCase().replace(/\s+/g, " ");
                 if (titleA < titleB){
@@ -155,7 +158,7 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
                 }
                 return 0;
             };
-            this.titleDESC = function (a, b) {
+            var titleDESC = function (a, b) {
                 var titleA = a.title.toLowerCase().replace(/\s/g, '');
                 var titleB = b.title.toLowerCase().replace(/\s/g, '');
                 if (titleA > titleB){
@@ -166,236 +169,174 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
                 }
                 return 0;
             };
-            this.order = function (type){
-                var recursive = function redo(data){
-                    data.map( function(item, index, array){
-                        if(type === "asc"){
-                            item.children.sort(self.titleASC);
-                        } else {
-                            item.children.sort(self.titleDESC);
-                        }
-                        if(item.children.length > 0 ){ redo(item.children) } ;
-                    });
-                }
-                // First reorder the top data
-                if(type === "asc"){
-                   self.data().sort(self.titleASC);
-                } else {
-                    self.data().sort(self.titleDESC);
-                }
-                // Then start recursive loop
-                recursive(self.data());
-            }
-            this.ui = function (){
-                $(".tdTitle").draggable({ helper: "clone" });
-                $("tr").droppable({
-                    tolerance : "pointer",
-                    hoverClass : "highlight",
-                    drop: function( event, ui ) {
-                        var to = $(this).attr("data-id");
-                        var from = ui.draggable.attr("data-id");
-                        if (to != from ){
-                            self.move(from, to);
-                        }
+            var recursive = function redo(data){
+                data.map( function(item, index, array){
+                    if(type === "asc"){
+                        item.children.sort(titleASC);
+                    } else {
+                        item.children.sort(titleDESC);
                     }
+                    if(item.children.length > 0 ){ redo(item.children) } ;
                 });
             }
-
+            // First reorder the top data
+            if(type === "asc"){
+               self.data().sort(titleASC);
+            } else {
+                self.data().sort(titleDESC);
+            }
+            // Then start recursive loop
+            recursive(self.data());
         }
-
-        // Table view
-        top.view = function(ctrl){
-            var i = 0; var val;
-            var resultingList = [];
-            var padding = 0;
-            var subFix = function(item){
-                if(item.children.length > 0 ){
-                    if(item.status){
-                        return "[-] ";
-                    } else {
-                        return "[+] ";
+        this.ui = function (){
+            $(".tdTitle").draggable({ helper: "clone" });
+            $("tr").droppable({
+                tolerance : "pointer",
+                hoverClass : "highlight",
+                drop: function( event, ui ) {
+                    var to = $(this).attr("data-id");
+                    var from = ui.draggable.attr("data-id");
+                    if (to != from ){
+                        self.traverse("pull", from, to);
                     }
-                } else {
-                    return m.trust("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
                 }
+            });
+            self.count(self.data());
 
-            }
-            var redo = function(data){
-                if(data.length > 0){
-                    data.map(function(item, index){
-                        i++;
-                        padding = item.level*20;
-                        padding = "padding-left: "+padding+"px";
-                        if(item.status){
-                            resultingList.push(
-                                m("tr", { "data-id" : item.id, "data-level": item.level}, [
-                                    m("td.tdTitle", {"data-id" : item.id, style : padding},  [
-                                        m("span", {"data-id" : item.id, "data-level": item.level, onclick: m.withAttr("data-id", ctrl.toggle)}, subFix(item)),
-                                        m("span", item.id+" "),
-                                        m("span", item.title+" ")
-                                    ]),
-                                    m("td", item.name + " "),
-                                    m("td", item.date + " ")
-                                ]))
-                            redo(item.children);
-                        } else {
-                            resultingList.push(
-                                m("tr", { "data-id" : item.id, "data-level": item.level}, [
-                                    m("td.tdTitle", { "data-id" : item.id,  style : padding},  [
-                                        m("span", {"data-id" : item.id, onclick: m.withAttr("data-id", ctrl.toggle)}, subFix(item)),
-                                        m("span", item.id+" "),
-                                        m("span", item.title+" ")
-                                    ]),
-                                    m("td", item.name + " "),
-                                    m("td", item.date + " ")
-                                ]))
-                        }
-
-                        });
-                } else {
-                    return;
-                }
-            }
-            redo(ctrl.data());
-            return [ m("div.row", [
-                      m("div.col-sm-12", [
-                          m("div.row", [
-                              m("div.col-sm-5",[
-                                    m("span", "From: "),
-                                    m("input.form-control", {onchange: m.withAttr("value", ctrl.fromid), value: ctrl.fromid()}),
-                                    m("span", "To: "),
-                                    m("input.form-control", {onchange: m.withAttr("value", ctrl.toid), value: ctrl.toid()}),
-                                    m("button.btn.btn-info", { onclick:  ctrl.pull},  "Move")
-                              ]),
-                              m("div.col-sm-4",[
-                                      m("input.form-control ", {onchange: m.withAttr("value", ctrl.todelete), value: ctrl.todelete()}),
-                                      m("button.btn.btn-danger", { onclick:  ctrl.delete},  "Delete")
-                                ]),
-                              m("div.col-sm-3",[
-                                    m("input.form-control", {onchange: m.withAttr("value", ctrl.toadd), value: ctrl.toadd()}),
-                                     m("button.btn.btn-success", { onclick:  ctrl.add},  "Add")
-                              ])
-                          ])
-                          ])
-                    ]),
-                    m("div.gridWrapper",{config : ctrl.ui}, [ m("table.table", [
-                        m("thead", [
-                            m("th", { width : "50%"}, [
-                                m("span", "Title"),
-                                m("i", { "data-order" :"asc", onclick : m.withAttr("data-order", ctrl.order)}, " [asc]"),
-                                m("i", { "data-order" :"desc", onclick : m.withAttr("data-order", ctrl.order)}, " [desc]")
-                            ]),
-                            m("th", "Person"),
-                            m("th", "Date")
-                        ]),
-                        m("tbody",
-                            resultingList
-                        )
-                    ])
-                   ])
-            ]
         }
-        console.log(top.controller);
-        //m.module(document.getElementById(top.options.placement), { controller : top.controller, view : top.view(top.controller)});
 
-    };
+        this.filterRun = function (){
+            self.flatData([]);
+            var titleResult = -1;
+            var authorResult = -1;
+            var filter = self.filterText().toLowerCase();
+            var recursive = function redo(data){
+                data.map( function(item, index, array){
+                    if(self.filterText()){
+                        titleResult = item.title.toLowerCase().indexOf(filter);
+                        authorResult = item.title.toLowerCase().indexOf(filter);
+                        if (titleResult > -1 || authorResult > -1){
+                            item.show = true;
+                            item.flat = true;
+                        } else {
+                            item.show = false;
+                        }
+                    } else {
+                        item.show = true;
+                        item.flat = false;
+                    }
+                    redo(item.children);
+                });
+            }
+            recursive(self.data());
 
-    //// List view
-//grid.view = function(ctrl){
-//    var i = 0;
-//    var redo = function(data){
-//        return data.map(function(item, index){
-//            i++;
-//            return [ m("ul.list-group", { "data-level" : item.level}, [
-//                m("li.list-group-item",  [
-//                    m("span", item.id + " "),
-//                    m("b", item.title + " "),
-//                    m("i", item.name + " "),
-//                    m("small", item.date + " "),
-//                    m("span", [ redo(item.children)])
-//                ])
-//
-//            ])];
-//        })
-//    }
-//    return [ m("div.row", [
-//        m("div.col-sm-12.form.form-inline", [
-//            m("input.form-control.col.sm-2", {onchange: m.withAttr("value", ctrl.fromid), value: ctrl.fromid()}),
-//            m("input.form-control.col.sm-2  ", {onchange: m.withAttr("value", ctrl.toid), value: ctrl.toid()}),
-//            m("button.btn.btn-info", { onclick:  ctrl.pull},  "Move"),
-//            m("input.form-control.col.sm-2  ", {onchange: m.withAttr("value", ctrl.todelete), value: ctrl.todelete()}),
-//            m("button.btn.btn-danger", { onclick:  ctrl.delete},  "Delete"),
-//            m("input.form-control.col.sm-2  ", {onchange: m.withAttr("value", ctrl.toadd), value: ctrl.toadd()}),
-//            m("button.btn.btn-success", { onclick:  ctrl.add},  "Add")
-//        ])
-//    ]),
-//        m("ul.list-group", [
-//            m("li.list-group-item", [
-//                redo(ctrl.data())
-//            ])
-//        ])
-//    ]
-//}
 
-// Table view
-//grid.view = function(ctrl){
-//    var i = 0;
-//    var padding = 0;
-//    var redo = function(data){
-//        l(data.length);
-//        if(data.length > 0){
-//            return data.map(function(item, index){
-//                i++;
-//                padding = item.level*10;
-//                padding = "padding-left: "+padding+"px";
-//                return  [ m("tr", { "data-level" : item.level}, [
-//                    m("td", {style : padding},  [
-//                        m("span",  " "),
-//                        m("span", item.id+" "),
-//                        m("span", item.title+" ")
-//                    ]),
-//                    m("td", item.name + " "),
-//                    m("td", item.date + " ")
-//                ]),
-//                    redo(item.children)
-//                ];
-//            })
-//        } else {
-//            return;
-//        }
-//
-//    }
-//    return [ m("div.row", [
-//        m("div.col-sm-12", [
-//            m("div.row", [
-//                m("div.col-sm-5",[
-//                    m("span", "From: "),
-//                    m("input.form-control", {onchange: m.withAttr("value", ctrl.fromid), value: ctrl.fromid()}),
-//                    m("span", "To: "),
-//                    m("input.form-control", {onchange: m.withAttr("value", ctrl.toid), value: ctrl.toid()}),
-//                    m("button.btn.btn-info", { onclick:  ctrl.pull},  "Move")
-//                ]),
-//                m("div.col-sm-4",[
-//                    m("input.form-control ", {onchange: m.withAttr("value", ctrl.todelete), value: ctrl.todelete()}),
-//                    m("button.btn.btn-danger", { onclick:  ctrl.delete},  "Delete")
-//                ]),
-//                m("div.col-sm-3",[
-//                    m("input.form-control", {onchange: m.withAttr("value", ctrl.toadd), value: ctrl.toadd()}),
-//                    m("button.btn.btn-success", { onclick:  ctrl.add},  "Add")
-//                ])
-//            ])
-//        ])
-//    ]),
-//        m("div.gridWrapper", [ m("table.table.table-condensed", [
-//            m("thead", [
-//                m("th", { width : "50%"}, "Title"),
-//                m("th", "Person"),
-//                m("th", "Date")
-//            ]),
-//            m("tbody", [
-//                redo(ctrl.data())
-//            ])
-//        ])
-//        ])
-//    ]
-//}
+        }
+
+        this.filter = function(e){
+            m.withAttr("value", self.filterText)(e);
+            self.filterRun();
+        }
+
+        this.count = function (){
+            self.totalItems(0);
+            var recursive = function redo(data){
+                data.map( function(item, index, array){
+                    self.totalItems(self.totalItems()+1);
+                    redo(item.children);
+                })
+            }
+            recursive(self.data());
+        }
+
+
+    }
+
+    // Table view
+    grid.view = function(ctrl){
+        var i = 0; var val;
+        var resultingList = [];
+        var padding = 0;
+        var itemcount = 0;
+   // Hierarchical
+        var subFix = function(item){
+            if(item.children.length > 0 ){
+                if(item.status){
+                    return "[-] ";
+                } else {
+                    return "[+] ";
+                }
+            } else {
+                return m.trust("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+            }
+
+        }
+        var redo = function(data){
+            if(data.length > 0){
+                data.map(function(item, index){
+                    i++;
+                    padding = item.level*20;
+                    padding = "padding-left: "+padding+"px";
+
+                    if(item.show) {
+                        if(item.flat){
+                            padding  = 0;
+                        }
+                        itemcount++;
+                        resultingList.push(
+                            m("tr", { "data-id" : item.id, "data-level": item.level}, [
+                                m("td.tdTitle", {"data-id" : item.id, style : padding},  [
+                                    m("span", {"data-id" : item.id, "data-level": item.level, onclick: function() { item.status = !item.status; }}, subFix(item)),
+                                    m("span", item.id+" "),
+                                    m("span", item.title+" ")
+                                ]),
+                                m("td", item.name + " "),
+                                m("td", item.date + " "),
+                                m("td", { width : "150"}, [
+                                    m("button.btn.btn-danger.btn-sm", {"data-id" : item.id, onclick: m.withAttr("data-id", ctrl.delete)},  " X "),
+                                    m("button.btn.btn-success.btn-sm", {"data-id" : item.id, onclick: m.withAttr("data-id", ctrl.add)},  " Add ")
+                                ])
+                            ]))
+                    }
+                    //if(item.status){
+                        redo(item.children);
+                    //}
+
+                    });
+            } else {
+                return;
+            }
+        }
+        redo(ctrl.data());
+        return [ m(".row", [ m(".col-xs-12", [
+                        m("input.form-control[placeholder='filter'][type='text']", { style:"width:300px", onkeyup: ctrl.filter, value : ctrl.filterText()} ),
+                        m("button.btn.btn-default", { onclick: ctrl.expand}, "Expand All"),
+                        m("button.btn.btn-default",{ onclick: ctrl.collapse}, "Collapse All")
+                    ])
+                ]),
+                m("div.gridWrapper",{config : ctrl.ui}, [ m("table.table", [
+                    m("thead", [
+                        m("th", { width : "50%"}, [
+                            m("span", "Title"),
+                            m("i", { "data-order" :"asc", onclick : m.withAttr("data-order", ctrl.order)}, " [asc]"),
+                            m("i", { "data-order" :"desc", onclick : m.withAttr("data-order", ctrl.order)}, " [desc]")
+                        ]),
+                        m("th", "Person"),
+                        m("th", "Date"),
+                        m("th", "Actions")
+                    ]),
+                    m("tbody",
+                        resultingList
+                    )
+                ])
+               ]),
+            m("div", [
+                m("b", "Total Items Shown: "),
+                m("span", itemcount)
+            ])
+        ]
+    }
+
+    m.module(document.getElementById("grid"), grid);
+
+
