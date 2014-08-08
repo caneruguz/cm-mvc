@@ -36,7 +36,7 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
 
     // Set property for data and get the data
     grid.data = m.prop({});
-    m.request({method: "GET", url: "sample_20.json"}).then(grid.data);
+    m.request({method: "GET", url: "sample.json"}).then(grid.data);
 
     grid.model = function (level){
         return {
@@ -61,6 +61,7 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
         this.filterText = m.prop("");
         this.flatData = m.prop([]);
         this.totalItems = m.prop(0);
+        this.viewcounter = m.prop(0); 
 
         this.add = function(addid){ self.traverse("add", addid)};
         this.delete = function(deleteid){ self.traverse("delete", deleteid)};
@@ -201,8 +202,7 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
                     }
                 }
             });
-            self.count(self.data());
-
+            //self.count(self.data());
         }
 
         this.filterRun = function (){
@@ -229,31 +229,31 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
                 });
             }
             recursive(self.data());
-
-
         }
 
         this.filter = function(e){
             m.withAttr("value", self.filterText)(e);
             self.filterRun();
         }
-
-        this.count = function (){
-            self.totalItems(0);
-            var recursive = function redo(data){
-                data.map( function(item, index, array){
-                    self.totalItems(self.totalItems()+1);
-                    redo(item.children);
-                })
-            }
-            recursive(self.data());
-        }
+//
+//        this.count = function (){
+//            self.totalItems(0);
+//            var recursive = function redo(data){
+//                data.map( function(item, index, array){
+//                    self.totalItems(self.totalItems()+1);
+//                    redo(item.children);
+//                })
+//            }
+//            recursive(self.data());
+//        }
 
 
     }
 
+var counter = 0; 
     // Table view
     grid.view = function(ctrl){
+        
         var i = 0; var val;
         var resultingList = [];
         var padding = 0;
@@ -269,7 +269,6 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
             } else {
                 return m.trust("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
             }
-
         }
         var redo = function(data){
             if(data.length > 0){
@@ -299,6 +298,8 @@ Mithril=m=new function a(b){function c(){var a=arguments,b=!("[object Object]"!=
                             ]))
                     }
                     //if(item.status){
+                                counter++;
+                                console.log(counter);
                         redo(item.children);
                     //}
 

@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="656610ed-85ca-46fa-9035-6e6bc1ab3419" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bundle.css" afterPath="$PROJECT_DIR$/dist/bundle.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/bundle.js" afterPath="$PROJECT_DIR$/dist/bundle.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/sample.json" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/grid.js" afterPath="$PROJECT_DIR$/scripts/grid.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/index.html" afterPath="$PROJECT_DIR$/dist/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/jsontree-generator/index.js" afterPath="$PROJECT_DIR$/node_modules/jsontree-generator/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/sample.json" afterPath="$PROJECT_DIR$/dist/sample.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/small.json" afterPath="$PROJECT_DIR$/dist/small.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/style.css" afterPath="$PROJECT_DIR$/less/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/style.less" afterPath="$PROJECT_DIR$/less/style.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cm-mvc.iws" />
@@ -38,7 +33,7 @@
       <file leaf-file-name="gulpfile.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1340">
+            <state line="17" column="23" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1320">
               <folding />
             </state>
           </provider>
@@ -47,54 +42,29 @@
       <file leaf-file-name="style.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/less/style.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="-2.745098" vertical-offset="0" max-vertical-offset="1340">
+            <state line="7" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="1340">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="28" selection-start="422" selection-end="422" vertical-scroll-proportion="-6.1538463" vertical-offset="0" max-vertical-offset="1060">
+            <state line="1" column="18" selection-start="34" selection-end="34" vertical-scroll-proportion="0.01493652" vertical-offset="0" max-vertical-offset="1339">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="grid.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="grid.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/grid.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="27" selection-start="275" selection-end="275" vertical-scroll-proportion="0.1493652" vertical-offset="0" max-vertical-offset="6220">
+            <state line="21" column="9" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6140">
               <folding>
                 <element signature="e#3811#4023#0" expanded="false" />
                 <element signature="e#3925#4001#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sample.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/sample.json">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="style.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="18" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1040">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="35" selection-start="16864" selection-end="16864" vertical-scroll-proportion="-67.15385" vertical-offset="494" max-vertical-offset="3940">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -158,10 +128,10 @@
         <option value="$PROJECT_DIR$/dist/index.html" />
         <option value="$PROJECT_DIR$/less/style.css" />
         <option value="$PROJECT_DIR$/dist/sample.json" />
-        <option value="$PROJECT_DIR$/node_modules/jsontree-generator/index.js" />
         <option value="$PROJECT_DIR$/less/style.less" />
         <option value="$PROJECT_DIR$/dist/small.json" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
+        <option value="$PROJECT_DIR$/node_modules/jsontree-generator/index.js" />
         <option value="$PROJECT_DIR$/scripts/grid.js" />
       </list>
     </option>
@@ -219,7 +189,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -235,70 +204,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jsontree-generator" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="node_modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gulp-minify-css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cm-mvc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="less" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,6 +237,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -394,14 +300,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09414063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09414063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -409,11 +315,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3280689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282532" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -431,9 +337,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11736111" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -459,6 +365,37 @@
     <find-history />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="23" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1320">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/style.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="1340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="28" selection-start="422" selection-end="422" vertical-scroll-proportion="0.0" vertical-offset="160" max-vertical-offset="1060">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/grid.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="268" column="23" selection-start="10526" selection-end="10526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6140">
+          <folding>
+            <element signature="e#3811#4023#0" expanded="false" />
+            <element signature="e#3925#4001#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/grid.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="77" column="47" selection-start="3306" selection-end="3306" vertical-scroll-proportion="0.0" vertical-offset="820" max-vertical-offset="6280">
@@ -471,9 +408,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/less/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="1" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="1000">
-          <folding />
-        </state>
+        <state line="37" column="1" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="1000" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
@@ -485,9 +420,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/small.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <folding />
-        </state>
+        <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
@@ -523,9 +456,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/less/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="1" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="1000">
-          <folding />
-        </state>
+        <state line="37" column="1" selection-start="571" selection-end="571" vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="1000" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
@@ -537,9 +468,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/small.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <folding />
-        </state>
+        <state line="0" column="2" selection-start="2" selection-end="2" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
@@ -696,9 +625,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="13" selection-start="84285" selection-end="84294" vertical-scroll-proportion="0.086880974" vertical-offset="0" max-vertical-offset="6900">
-          <folding />
-        </state>
+        <state line="5" column="13" selection-start="84285" selection-end="84294" vertical-scroll-proportion="0.086880974" vertical-offset="0" max-vertical-offset="6900" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bower.json">
@@ -721,67 +648,56 @@
         <state line="3" column="0" selection-start="64" selection-end="315" vertical-scroll-proportion="0.07272727" vertical-offset="0" max-vertical-offset="825" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/less/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="18" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="40" max-vertical-offset="1040">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/gulp-minify-css/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="384" selection-end="384" vertical-scroll-proportion="0.3151515" vertical-offset="0" max-vertical-offset="2020">
-          <folding />
-        </state>
+        <state line="13" column="13" selection-start="384" selection-end="384" vertical-scroll-proportion="0.3151515" vertical-offset="0" max-vertical-offset="2020" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/less/style.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="-2.745098" vertical-offset="0" max-vertical-offset="1340">
+        <state line="7" column="13" selection-start="75" selection-end="75" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="1340">
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="28" selection-start="422" selection-end="422" vertical-scroll-proportion="-6.1538463" vertical-offset="0" max-vertical-offset="1060">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="27" selection-start="27" selection-end="27" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1340">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/sample.json">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/small.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="1467" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.07616146" vertical-offset="0" max-vertical-offset="1313">
+        <state line="0" column="1467" selection-start="1467" selection-end="1467" vertical-scroll-proportion="0.07616146" vertical-offset="0" max-vertical-offset="1313" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="23" selection-start="715" selection-end="715" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1320">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/jsontree-generator/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="35" selection-start="16864" selection-end="16864" vertical-scroll-proportion="-67.15385" vertical-offset="494" max-vertical-offset="3940">
+        <state line="146" column="31" selection-start="18038" selection-end="18038" vertical-scroll-proportion="0.23076923" vertical-offset="2614" max-vertical-offset="3940">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/less/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="18" selection-start="220" selection-end="220" vertical-scroll-proportion="0.1904762" vertical-offset="0" max-vertical-offset="1365" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/grid.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="275" selection-end="275" vertical-scroll-proportion="0.1493652" vertical-offset="0" max-vertical-offset="6220">
+        <state line="21" column="9" selection-start="634" selection-end="634" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6140">
           <folding>
             <element signature="e#3811#4023#0" expanded="false" />
             <element signature="e#3925#4001#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="18" selection-start="34" selection-end="34" vertical-scroll-proportion="0.01493652" vertical-offset="0" max-vertical-offset="1339">
+          <folding />
         </state>
       </provider>
     </entry>

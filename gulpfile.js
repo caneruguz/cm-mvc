@@ -16,7 +16,7 @@ gulp.task('generate-max', function() {
     // gulp.src -- get html template
     return gulp.src(paths.json)
         // pipe through plugin
-        .pipe(generate(50000, 30))
+        .pipe(generate(20000, 0))
         // set destination
         .pipe(gulp.dest("./dist"))
 });
@@ -36,7 +36,6 @@ gulp.task("less", function(){
     gulp.src(paths.less)
         .pipe(less())
         .pipe(gulp.dest('./less'));
-
 })
 
 gulp.task('css', ["less"], function(){
